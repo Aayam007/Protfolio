@@ -1,4 +1,6 @@
-
+$( document ).ready(function() {
+    console.log( "ready!" );
+});
 const searchBox = document.querySelector('#query-field');
 const countryName = document.querySelector('#country');
 const Nationflag = document.querySelector('#country-flag');
