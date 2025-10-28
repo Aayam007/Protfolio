@@ -1,11 +1,33 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+/* Removed @import for better performance - font loaded in HTML */
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
 }
+
+/* Prevent Cumulative Layout Shift (CLS) */
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+/* Reserve space for background images to prevent CLS */
+[style*="background-image"] {
+  min-height: 200px;
+}
+
+.img-about img,
+.img-about .img {
+  min-height: 400px;
+}
+
+.project.img {
+  min-height: 300px;
+  aspect-ratio: 16/9;
+}
+
 
 body .container-fluid {
   background-color: #e9e9f3;
