@@ -1,5 +1,25 @@
 # robots.txt for bishowshrestha.com.np
-User-agent: *
-Disallow: /cgi-bin/
+# Last updated: October 28, 2025
 
+User-agent: *
+Allow: /
+Disallow: /cgi-bin/
+Disallow: /scss/
+Disallow: /prepros-6.config
+
+# Crawl delay for bots (optional)
+Crawl-delay: 1
+
+# Sitemap location
 Sitemap: https://bishowshrestha.com.np/sitemap.xml
+
+# Allow Google Image Bot
+User-agent: Googlebot-Image
+Allow: /images/
+
+# Block bad bots (optional)
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10

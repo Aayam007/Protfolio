@@ -1,21 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
+<!-- Homepage -->
 <url>
-  <loc>https://bishowshrestha.com.np/</loc>
+  <loc>https://bishowshrestha.com.np</loc>
   <lastmod>2025-10-28</lastmod>
-  <changefreq>monthly</changefreq>
+  <changefreq>weekly</changefreq>
   <priority>1.00</priority>
+  <image:image>
+    <image:loc>https://bishowshrestha.com.np/images/about.jpg</image:loc>
+    <image:title>Bishow Shrestha - Software Developer</image:title>
+  </image:image>
 </url>
+
+<!-- Resume PDF -->
 <url>
   <loc>https://bishowshrestha.com.np/bishow.pdf</loc>
   <lastmod>2025-10-28</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.80</priority>
+</url>
+
+<!-- Section anchors for better indexing -->
+<url>
+  <loc>https://bishowshrestha.com.np#about-section</loc>
+  <lastmod>2025-10-28</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.70</priority>
+</url>
+
+<url>
+  <loc>https://bishowshrestha.com.np#resume-section</loc>
+  <lastmod>2025-10-28</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+
+<url>
+  <loc>https://bishowshrestha.com.np#services-section</loc>
+  <lastmod>2025-10-28</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.75</priority>
+</url>
+
+<url>
+  <loc>https://bishowshrestha.com.np#projects-section</loc>
+  <lastmod>2025-10-28</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.85</priority>
+</url>
+
+<url>
+  <loc>https://bishowshrestha.com.np#contact-section</loc>
+  <lastmod>2025-10-28</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.70</priority>
 </url>
 
 </urlset>
