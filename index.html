@@ -7,24 +7,33 @@
 	<meta name="keywords" content=".Net, DotNet, Developer">
 	<meta name="author" content="Bishow Kaji Shrestha">
     <meta name="description" content="Hi I'm Bishow Shrestha a Software developer. I'm very familiar with Microsoft .NET CORE framework, modern client-side frameworks and SQL databases.">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 	<link rel="icon" href="#" type="image/gif" sizes="16x16">
+	
+	<!-- Bootstrap First -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	
+	<!-- Icon Libraries -->
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
     
+    <!-- Animation Libraries -->
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/aos.css">
+    
+    <!-- Carousel & Popup -->
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
-
-    <link rel="stylesheet" href="css/aos.css">
-
-    <link rel="stylesheet" href="css/ionicons.min.css">
-    
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
+	
+	<!-- Original Theme Styles -->
 	<link rel="stylesheet" href="css/style.css">
+	
+	<!-- Modern Custom Styles (MUST BE LAST) -->
 	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	
 	<script data-ad-client="ca-pub-5872969111929010" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -54,6 +63,7 @@
 	          <li class="nav-item"><a href="#home-section" class="nav-link" aria-label="Navigate to Home"><span>Home</span></a></li>
 	          <li class="nav-item"><a href="#about-section" class="nav-link" aria-label="Navigate to About"><span>About</span></a></li>
 	          <li class="nav-item"><a href="#resume-section" class="nav-link" aria-label="Navigate to Resume"><span>Resume</span></a></li>
+	          <li class="nav-item"><a href="#tools-section" class="nav-link" aria-label="Navigate to Tools"><span>Tools</span></a></li>
 	          <li class="nav-item"><a href="#services-section" class="nav-link" aria-label="Navigate to Services"><span>Services</span></a></li>
 	          <li class="nav-item"><a href="#projects-section" class="nav-link" aria-label="Navigate to Projects"><span>Projects</span></a></li>
 	          <li class="nav-item"><a href="#contact-section" class="nav-link" aria-label="Navigate to Contact"><span>Contact</span></a></li>
@@ -167,72 +177,172 @@
 			</div>
 		</div>
 	</section>
-	<section class="ftco-about img ftco-section ftco-no-pt ftco-no-pb" id="blog-section">
-		<div class="container-fluid">
-			<div class="covid-tracker-app">
-				<div class="welcome-sec">
-					<div class="greeting">
-						<div class="hello">
-							<h5>Hi EveryOne</h5>
-							<span class="iconify" data-icon="emojione:hand-with-fingers-splayed" data-inline="false"></span>
-	
+
+	<!-- Developer Tools Section -->
+	<section class="ftco-section" id="tools-section">
+		<div class="container">
+			<div class="row justify-content-center mb-5 pb-5">
+				<div class="col-md-7 heading-section text-center ftco-animate">
+					<h1 class="big big-2">Tools</h1>
+					<h2 class="mb-4"></h2>
+				</div>
+			</div>
+			<div class="row">
+				<!-- JSON Formatter -->
+				<div class="col-md-6 col-lg-4 ftco-animate">
+					<div class="tool-card">
+						<div class="tool-icon">
+							<span class="icon-code"></span>
 						</div>
-						<p>Lets's check your location info!</p>
-					</div>
-					<div class="profile-pic">
-						<img class="img-fluid"
-							src="/images/5b6717d525868_thumb900.webp" alt="profile-pic">
+						<h3>JSON Formatter</h3>
+						<p>Format and validate JSON data with syntax highlighting</p>
+						<textarea id="jsonInput" class="tool-input" placeholder='Enter JSON here...'></textarea>
+						<button onclick="formatJSON()" class="btn btn-primary mt-2">Format JSON</button>
+						<button onclick="minifyJSON()" class="btn btn-secondary mt-2">Minify</button>
+						<pre id="jsonOutput" class="tool-output"></pre>
 					</div>
 				</div>
-				<div class="help-container">
-					<div class="checkup-sec">
-						<img class="img-fluid" src="./images/doctor-male.png" alt="sick-person">
-						<div class="care-msg">
-							<h5>COVID-19 tracker app </h5>
-							<p>This application helps you to provide COVID-19 information.</p>
+
+				<!-- Base64 Encoder/Decoder -->
+				<div class="col-md-6 col-lg-4 ftco-animate">
+					<div class="tool-card">
+						<div class="tool-icon">
+							<span class="icon-lock"></span>
 						</div>
+						<h3>Base64 Encoder/Decoder</h3>
+						<p>Encode or decode Base64 strings</p>
+						<textarea id="base64Input" class="tool-input" placeholder="Enter text here..."></textarea>
+						<button onclick="encodeBase64()" class="btn btn-primary mt-2">Encode</button>
+						<button onclick="decodeBase64()" class="btn btn-secondary mt-2">Decode</button>
+						<pre id="base64Output" class="tool-output"></pre>
 					</div>
 				</div>
-	
-				<div class="search-field">
-					<span class="iconify country-flag" data-icon="uil:search" data-inline="false"></span>
-					<input id="query-field" type="text" placeholder="Search By Country Name">
-				</div>
-	
-				<div class="country-data">
-					<div class="searched-country">
-						<div class="country-name">
-							<div class="flag-sec">
-								<img id="country-flag" src="./images/flag-400.png" class="img-fluid" alt="country-name">
-							</div>
-							
-							<h6 id="country">Nepal, NP</h6>
+
+				<!-- Color Picker -->
+				<div class="col-md-6 col-lg-4 ftco-animate">
+					<div class="tool-card">
+						<div class="tool-icon">
+							<span class="icon-paint-brush"></span>
 						</div>
-						<span class="iconify refresh-btn" data-icon="gridicons:refresh" data-inline="false"></span>
-	
-					</div>
-	
-					<div class="covid-data-cards">
-						<div class="confirmed">
-							<h6>Confirmed</h6>
-							<h4 id="confirmed-data"></h4>
-						</div>
-						<div class="active">
-							<h6>active</h6>
-							<h4 id="active-data"></h4>
-						</div>
-						<div class="recovered">
-							<h6>Recovered</h6>
-							<h4 id="recovered-data"></h4>
-						</div>
-						<div class="death">
-							<h6>Death</h6>
-							<h4 id="death-data"></h4>
+						<h3>Color Picker</h3>
+						<p>Get HEX, RGB, and HSL values</p>
+						<input type="color" id="colorPicker" class="tool-color-input" value="#667eea">
+						<div id="colorValues" class="tool-output mt-3">
+							<p><strong>HEX:</strong> <span id="hexValue">#667eea</span></p>
+							<p><strong>RGB:</strong> <span id="rgbValue">rgb(102, 126, 234)</span></p>
+							<p><strong>HSL:</strong> <span id="hslValue">hsl(229, 75%, 66%)</span></p>
 						</div>
 					</div>
 				</div>
-	
-	
+
+				<!-- Password Generator -->
+				<div class="col-md-6 col-lg-4 ftco-animate">
+					<div class="tool-card">
+						<div class="tool-icon">
+							<span class="icon-shield"></span>
+						</div>
+						<h3>Password Generator</h3>
+						<p>Generate secure random passwords</p>
+						<div class="form-group">
+							<label>Length: <span id="passLength">16</span></label>
+							<input type="range" id="passwordLength" min="8" max="32" value="16" class="form-control-range" onchange="updatePassLength()">
+						</div>
+						<div class="form-check">
+							<input type="checkbox" id="includeNumbers" checked class="form-check-input">
+							<label class="form-check-label">Include Numbers</label>
+						</div>
+						<div class="form-check">
+							<input type="checkbox" id="includeSymbols" checked class="form-check-input">
+							<label class="form-check-label">Include Symbols</label>
+						</div>
+						<button onclick="generatePassword()" class="btn btn-primary mt-2">Generate</button>
+						<div class="tool-output mt-2">
+							<input type="text" id="generatedPassword" class="form-control" readonly>
+							<button onclick="copyPassword()" class="btn btn-secondary mt-2">Copy</button>
+						</div>
+					</div>
+				</div>
+
+				<!-- Lorem Ipsum Generator -->
+				<div class="col-md-6 col-lg-4 ftco-animate">
+					<div class="tool-card">
+						<div class="tool-icon">
+							<span class="icon-file-text"></span>
+						</div>
+						<h3>Lorem Ipsum Generator</h3>
+						<p>Generate placeholder text</p>
+						<div class="form-group">
+							<label>Paragraphs:</label>
+							<input type="number" id="paragraphCount" min="1" max="10" value="3" class="form-control">
+						</div>
+						<button onclick="generateLorem()" class="btn btn-primary mt-2">Generate</button>
+						<pre id="loremOutput" class="tool-output"></pre>
+					</div>
+				</div>
+
+				<!-- URL Encoder/Decoder -->
+				<div class="col-md-6 col-lg-4 ftco-animate">
+					<div class="tool-card">
+						<div class="tool-icon">
+							<span class="icon-link"></span>
+						</div>
+						<h3>URL Encoder/Decoder</h3>
+						<p>Encode or decode URL strings</p>
+						<textarea id="urlInput" class="tool-input" placeholder="Enter URL here..."></textarea>
+						<button onclick="encodeURL()" class="btn btn-primary mt-2">Encode</button>
+						<button onclick="decodeURL()" class="btn btn-secondary mt-2">Decode</button>
+						<pre id="urlOutput" class="tool-output"></pre>
+					</div>
+				</div>
+
+				<!-- Timestamp Converter -->
+				<div class="col-md-6 col-lg-4 ftco-animate">
+					<div class="tool-card">
+						<div class="tool-icon">
+							<span class="icon-clock"></span>
+						</div>
+						<h3>Timestamp Converter</h3>
+						<p>Convert Unix timestamp to date</p>
+						<input type="number" id="timestampInput" class="form-control" placeholder="Enter Unix timestamp">
+						<button onclick="convertTimestamp()" class="btn btn-primary mt-2">Convert</button>
+						<button onclick="getCurrentTimestamp()" class="btn btn-secondary mt-2">Current Time</button>
+						<div id="timestampOutput" class="tool-output"></div>
+					</div>
+				</div>
+
+				<!-- Text Case Converter -->
+				<div class="col-md-6 col-lg-4 ftco-animate">
+					<div class="tool-card">
+						<div class="tool-icon">
+							<span class="icon-type"></span>
+						</div>
+						<h3>Text Case Converter</h3>
+						<p>Convert text to different cases</p>
+						<textarea id="caseInput" class="tool-input" placeholder="Enter text here..."></textarea>
+						<button onclick="convertCase('upper')" class="btn btn-primary btn-sm mt-2">UPPERCASE</button>
+						<button onclick="convertCase('lower')" class="btn btn-primary btn-sm mt-2">lowercase</button>
+						<button onclick="convertCase('title')" class="btn btn-primary btn-sm mt-2">Title Case</button>
+						<button onclick="convertCase('camel')" class="btn btn-primary btn-sm mt-2">camelCase</button>
+						<pre id="caseOutput" class="tool-output"></pre>
+					</div>
+				</div>
+
+				<!-- UUID Generator -->
+				<div class="col-md-6 col-lg-4 ftco-animate">
+					<div class="tool-card">
+						<div class="tool-icon">
+							<span class="icon-hash"></span>
+						</div>
+						<h3>UUID Generator</h3>
+						<p>Generate unique identifiers</p>
+						<button onclick="generateUUID()" class="btn btn-primary mt-2">Generate UUID</button>
+						<div class="tool-output mt-2">
+							<input type="text" id="uuidOutput" class="form-control" readonly>
+							<button onclick="copyUUID()" class="btn btn-secondary mt-2">Copy</button>
+						</div>
+					</div>
+				</div>
+
 			</div>
 		</div>
 	</section>
@@ -903,5 +1013,11 @@
   <!-- External scripts - deferred loading -->
   <script src="https://code.iconify.design/1/1.0.7/iconify.min.js" defer></script>
   <script src="script.js" defer></script>
+  
+  <!-- Dark Mode Toggle Button -->
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+    <span class="theme-icon">🌙</span>
+  </button>
+  
   </body>
 </html>

@@ -1,0 +1,60 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 2639 >>
+stream
+BT
+/F1 12 Tf
+16 TL
+60 800 Td
+(UNIVERSITY COURSE SYLLABUS) Tj
+T*
+(Course Title: Web Design Essentials \(HTML + CSS + JavaScript\)) Tj
+T*
+(Contact Hours: 30 \(Lecture 18 + Lab 12\); Delivery: 10 weeks, 3 hours per week \(2 lecture + 1 lab\); Prerequisite: Basic computer literacy.) Tj
+T*
+(Learning Outcomes: CLO1 explain core web concepts, standards, and accessibility principles; CLO2 build semantic HTML5; CLO3 style responsive CSS layouts; CLO4 develop JavaScript interactions; CLO5 integrate assets into cohesive project.) Tj
+T*
+(Reference Texts: T1 Duckett HTML & CSS 2011; T2 Duckett JavaScript & JQuery 2014; R1 W3C HTML Standard; R2 MDN Web Docs.) Tj
+T*
+(Assessment Scheme: Assignment 1 HTML structure 10 percent CLO2; Assignment 2 CSS responsive layout 15 percent CLO3; Lab quizzes JavaScript syntax and DOM 15 percent CLO4; Midterm test Weeks 1 to 5 20 percent CLO1 to CLO3; Capstone project Weeks 8 to 10 30 percent CLO2 to CLO5; Participation and lab exercises 10 percent CLO2 to CLO4.) Tj
+T*
+(Unit Breakdown \(hours\): Unit 1 Foundations and Accessibility 1 to 4; Unit 2 HTML5 Authoring 5 to 10; Unit 3 CSS Fundamentals and Responsive Design 11 to 18; Unit 4 JavaScript Essentials 19 to 26; Unit 5 Integration and Capstone 27 to 30.) Tj
+T*
+(Week Plan Part 1: Week 1 introduction, web architecture, accessibility; Week 2 HTML structure and semantic tags with onboarding page lab; Week 3 media, tables, forms with accessible form lab; Week 4 CSS syntax, selectors, box model with typography lab; Week 5 flexbox and grid, responsive card lab, midterm review.) Tj
+T*
+(Week Plan Part 2: Week 6 responsive strategies and micro interactions with mobile first landing page lab; Week 7 JavaScript basics with DOM manipulation lab; Week 8 events, validation, fetch API with dynamic content lab and project brief; Week 9 project alpha build with accessibility checks; Week 10 project completion, JavaScript enhancements, testing, showcase.) Tj
+T*
+(Capstone Project: Multi page responsive site demonstrating semantic HTML, mobile first CSS, and interactive JavaScript; Milestones Week 8 proposal, Week 9 alpha, Week 10 final demo; Rubric criteria structure, visual design, responsiveness, interactivity, documentation each 20 percent.) Tj
+T*
+(Self Study Guidance: Pre readings and tutorials 1.5 hours per week; Lab practice follow up 1 hour per week; Project focus Weeks 8 to 10 additional 2 hours per week.) Tj
+T*
+(CLO to Assessment Mapping: CLO1 Midterm test; CLO2 Assignment 1, Capstone, Participation; CLO3 Assignment 2, Midterm test; CLO4 Lab quizzes, Capstone, Participation; CLO5 Capstone project.) Tj
+ET
+
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000000311 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+3002
+%%EOF
