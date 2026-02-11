@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Question... 💝</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container-valentine {
+            text-align: center;
+            padding: 40px 20px;
+            max-width: 800px;
+        }
+
+        h1 {
+            color: white;
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+            animation: bounceIn 1s;
+        }
+
+        .question-box {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 50px 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+            animation: fadeInUp 1s 0.5s both;
+        }
+
+        .question-text {
+            font-size: 2rem;
+            color: #e73c7e;
+            font-weight: 600;
+            margin-bottom: 40px;
+        }
+
+        .emoji-heart {
+            font-size: 5rem;
+            animation: heartbeat 1.5s infinite;
+            display: inline-block;
+            margin: 20px 0;
+        }
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            10%,
+            30% {
+                transform: scale(0.9);
+            }
+
+            20%,
+            40% {
+                transform: scale(1.1);
+            }
+        }
+
+        .button-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .btn-choice {
+            padding: 15px 40px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-yes {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            position: relative;
+        }
+
+        .btn-yes:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-no {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            position: absolute;
+        }
+
+        .btn-no:hover {
+            /* Will be moved with JavaScript */
+        }
+
+        .success-message {
+            display: none;
+            animation: fadeInUp 1s;
+        }
+
+        .success-message h2 {
+            font-size: 3rem;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            margin: 20px 0;
+        }
+
+        .success-message p {
+            font-size: 1.5rem;
+            color: white;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .heart {
+            position: fixed;
+            color: red;
+            font-size: 2rem;
+            animation: float-up 4s ease-in infinite;
+            pointer-events: none;
+            opacity: 0;
+        }
+
+        @keyframes float-up {
+            0% {
+                opacity: 1;
+                transform: translateY(0) rotate(0deg);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-1000px) rotate(360deg);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+
+            70% {
+                transform: scale(0.9);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .countdown {
+            color: white;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .music-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+            z-index: 1000;
+        }
+
+        .music-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        .love-letter {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: left;
+            display: none;
+            animation: unfold 1s ease-out;
+        }
+
+        @keyframes unfold {
+            from {
+                opacity: 0;
+                transform: rotateX(-90deg);
+            }
+
+            to {
+                opacity: 1;
+                transform: rotateX(0);
+            }
+        }
+
+        .love-letter h3 {
+            color: #e73c7e;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .love-letter p {
+            color: #333;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .memory-box {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 20px;
+            display: none;
+            animation: slideIn 1s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .memory-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 10px 0;
+            animation: fadeInUp 0.5s;
+        }
+
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .reason-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            transition: transform 0.3s;
+        }
+
+        .reason-card:hover {
+            transform: translateY(-5px) scale(1.05);
+        }
+
+        .firework {
+            position: fixed;
+            pointer-events: none;
+            z-index: 998;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .question-text {
+                font-size: 1.5rem;
+            }
+
+            .btn-choice {
+                padding: 12px 30px;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button class="music-toggle" id="musicToggle" onclick="toggleMusic()" title="Toggle Music">🎵</button>
+    <audio id="bgMusic" loop autoplay>
+        <source src="a.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="yesSound">
+        <source src="https://actions.google.com/sounds/v1/impacts/crash.ogg" type="audio/ogg">
+    </audio>
+
+    <div class="container-valentine">
+        <h1 class="animated">💖 Happy Valentine's Day! 💖</h1>
+
+        <div class="question-box" id="questionBox">
+            <div class="emoji-heart">❤️</div>
+            <div class="question-text">
+                Will you be my Valentine?
+            </div>
+            <p style="font-size: 1.2rem; color: #666; margin-bottom: 20px;">
+                Choose wisely... or try to! 😏
+            </p>
+
+            <div class="button-container" style="position: relative; height: 150px;">
+                <button class="btn-choice btn-yes" id="yesBtn" onclick="sayYes()">
+                    YES! 💕
+                </button>
+                <button class="btn-choice btn-no" id="noBtn" onmouseover="moveButton()" onclick="moveButton()">
+                    No 😢
+                </button>
+            </div>
+
+            <div class="countdown" id="countdown"></div>
+        </div>
+
+        <div class="success-message" id="successMessage">
+            <div class="emoji-heart">💝</div>
+            <h2>Yay! 🎉</h2>
+            <p>You just made me the happiest person! 😍</p>
+            <p style="margin-top: 20px;">I promise to:</p>
+            <p>✨ Make you smile every day</p>
+            <p>🌟 Be your partner in crime</p>
+            <p>💖 Love you to the moon and back</p>
+
+            <div class="love-letter" id="loveLetter">
+                <h3>💌 A Letter From My Heart</h3>
+                <p>Dear Beautiful,</p>
+                <p>From the moment you came into my life, everything changed. You make ordinary days extraordinary, and
+                    you turn simple moments into precious memories.</p>
+                <p>Your smile lights up my world, your laughter is my favorite sound, and your happiness means
+                    everything to me.</p>
+                <p>I can't wait to create a million more memories with you, to laugh at silly things, to support each
+                    other's dreams, and to grow together.</p>
+                <p>Thank you for being you. Thank you for making me want to be better.</p>
+                <p style="text-align: right; margin-top: 20px;"><strong>Forever yours,<br>Bishow 💕</strong></p>
+            </div>
+
+            <div class="memory-box" id="memoryBox">
+                <h3 style="color: #e73c7e; text-align: center; margin-bottom: 20px;">✨ Why I Love You ✨</h3>
+                <div class="reasons-grid">
+                    <div class="reason-card">😊 Your beautiful smile</div>
+                    <div class="reason-card">💫 Your kind heart</div>
+                    <div class="reason-card">🌟 Your amazing personality</div>
+                    <div class="reason-card">💕 The way you care</div>
+                    <div class="reason-card">🎨 Your creativity</div>
+                    <div class="reason-card">🌈 Your positive energy</div>
+                    <div class="reason-card">✨ Everything about you</div>
+                    <div class="reason-card">💖 Simply being you</div>
+                </div>
+            </div>
+
+            <p style="margin-top: 30px; font-size: 2rem;">❤️ Forever Yours ❤️</p>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script>
+        // Calculate days until Valentine's Day 2026
+        function updateCountdown() {
+            const valentineDay = new Date('2026-02-14T00:00:00');
+            const now = new Date();
+            const diff = valentineDay - now;
+
+            if (diff > 0) {
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                document.getElementById('countdown').innerHTML =
+                    `Time to answer: ${days}d ${hours}h ${minutes}m ${seconds}s ⏰`;
+            } else {
+                document.getElementById('countdown').innerHTML = "It's Valentine's Day! ❤️";
+            }
+        }
+
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Track attempts and make No button smaller
+        let noClickCount = 0;
+
+        // Move the "No" button away from cursor
+        function moveButton() {
+            const btn = document.getElementById('noBtn');
+            const container = btn.parentElement;
+
+            const maxX = container.offsetWidth - btn.offsetWidth;
+            const maxY = container.offsetHeight - btn.offsetHeight;
+
+            const randomX = Math.random() * maxX;
+            const randomY = Math.random() * maxY;
+
+            btn.style.left = randomX + 'px';
+            btn.style.top = randomY + 'px';
+
+            // Shrink the button each time (but never hide it)
+            noClickCount++;
+            const newSize = Math.max(0.5, 1 - (noClickCount * 0.08));
+            btn.style.transform = `scale(${newSize})`;
+
+            // Add funny messages
+            const messages = [
+                "Nope! Try again! 😄",
+                "Not so fast! 😜",
+                "You can't click me! 😂",
+                "Wrong choice! 😏",
+                "The answer is YES! 💕",
+                `Attempt ${noClickCount}... still running! 🏃‍♀️`,
+                "I'm getting smaller! 😱",
+                "You know you want to say YES! 💖"
+            ];
+            const randomMsg = messages[Math.floor(Math.random() * messages.length)];
+            showMessage(randomMsg);
+        }
+
+        // Helper function to show messages
+        function showMessage(message) {
+            const tempMsg = document.createElement('div');
+            tempMsg.textContent = message;
+            tempMsg.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: rgba(255,255,255,0.9);
+                padding: 20px 40px;
+                border-radius: 15px;
+                font-size: 1.5rem;
+                font-weight: 600;
+                color: #e73c7e;
+                z-index: 1000;
+                animation: fadeInUp 0.5s;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            `;
+            document.body.appendChild(tempMsg);
+            setTimeout(() => tempMsg.remove(), 1500);
+        }
+
+        // Music toggle
+        let musicPlaying = false;
+
+        // Initialize music settings
+        const bgMusic = document.getElementById('bgMusic');
+        bgMusic.volume = 0.5; // Set to 50% volume
+
+        function toggleMusic() {
+            const music = document.getElementById('bgMusic');
+            const btn = document.getElementById('musicToggle');
+
+            if (musicPlaying) {
+                music.pause();
+                btn.textContent = '🔇';
+                musicPlaying = false;
+            } else {
+                music.play();
+                btn.textContent = '🎵';
+                musicPlaying = true;
+            }
+        }
+
+        // When YES is clicked
+        function sayYes() {
+            // Play celebration sound
+            const yesSound = document.getElementById('yesSound');
+            yesSound.volume = 0.7;
+            yesSound.play();
+
+            document.getElementById('questionBox').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+
+            // Create floating hearts
+            createHearts();
+
+            // Create confetti
+            createConfetti();
+
+            // Create fireworks
+            createFireworks();
+
+            // Play celebration
+            celebrate();
+
+            // Show love letter and memories after delay
+            setTimeout(() => {
+                document.getElementById('loveLetter').style.display = 'block';
+            }, 2000);
+
+            setTimeout(() => {
+                document.getElementById('memoryBox').style.display = 'block';
+            }, 4000);
+
+            // Auto-play music on celebration
+            if (!musicPlaying) {
+                toggleMusic();
+            }
+        }
+
+        // Create floating hearts animation
+        function createHearts() {
+            setInterval(() => {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerHTML = '❤️';
+                heart.style.left = Math.random() * window.innerWidth + 'px';
+                heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                document.body.appendChild(heart);
+
+                setTimeout(() => heart.remove(), 4000);
+            }, 300);
+        }
+
+        // Create confetti explosion
+        function createConfetti() {
+            const colors = ['#ff6b9d', '#c06c84', '#f67280', '#355c7d', '#ffd700', '#ff69b4'];
+
+            for (let i = 0; i < 150; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = Math.random() * window.innerWidth + 'px';
+                    confetti.style.top = '-10px';
+                    confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.animation = `fall ${Math.random() * 3 + 2}s linear forwards`;
+                    confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+                    document.body.appendChild(confetti);
+
+                    setTimeout(() => confetti.remove(), 5000);
+                }, i * 30);
+            }
+        }
+
+        // Create fireworks effect
+        function createFireworks() {
+            setInterval(() => {
+                const x = Math.random() * window.innerWidth;
+                const y = Math.random() * window.innerHeight / 2;
+
+                for (let i = 0; i < 20; i++) {
+                    const firework = document.createElement('div');
+                    firework.className = 'firework';
+                    firework.innerHTML = '✨';
+                    firework.style.left = x + 'px';
+                    firework.style.top = y + 'px';
+                    firework.style.fontSize = '1.5rem';
+
+                    const angle = (Math.PI * 2 * i) / 20;
+                    const velocity = 100;
+
+                    firework.style.animation = 'none';
+                    document.body.appendChild(firework);
+
+                    const tx = Math.cos(angle) * velocity;
+                    const ty = Math.sin(angle) * velocity;
+
+                    firework.animate([
+                        { transform: 'translate(0, 0)', opacity: 1 },
+                        { transform: `translate(${tx}px, ${ty}px)`, opacity: 0 }
+                    ], {
+                        duration: 1000,
+                        easing: 'ease-out'
+                    });
+
+                    setTimeout(() => firework.remove(), 1000);
+                }
+            }, 2000);
+        }
+
+        // Celebration effect
+        function celebrate() {
+            // Change background to more romantic
+            document.body.style.background = 'linear-gradient(-45deg, #ff6b9d, #c06c84, #f67280, #355c7d)';
+
+            // You can add more celebration effects here
+            console.log('💕 She said YES! 💕');
+        }
+
+        // Easter egg: Make hearts follow cursor
+        document.addEventListener('mousemove', (e) => {
+            if (document.getElementById('successMessage').style.display === 'block') {
+                if (Math.random() > 0.95) {
+                    const heart = document.createElement('div');
+                    heart.innerHTML = '💖';
+                    heart.style.cssText = `
+                        position: fixed;
+                        left: ${e.clientX}px;
+                        top: ${e.clientY}px;
+                        font-size: 1.5rem;
+                        pointer-events: none;
+                        animation: fadeOut 1s forwards;
+                    `;
+                    document.body.appendChild(heart);
+                    setTimeout(() => heart.remove(), 1000);
+                }
+            }
+        });
+
+        // Add additional animations
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes fadeOut {
+                to {
+                    opacity: 0;
+                    transform: translateY(-50px) scale(0);
+                }
+            }
+            @keyframes fall {
+                to {
+                    transform: translateY(100vh) rotate(720deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Auto-play music on page load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const music = document.getElementById('bgMusic');
+                const musicBtn = document.getElementById('musicToggle');
+
+                // Try to auto-play (some browsers require user interaction)
+                music.play().then(() => {
+                    musicPlaying = true;
+                    musicBtn.textContent = '🎵';
+                }).catch(error => {
+                    // If autoplay fails, pulse button to encourage user to click
+                    console.log('Autoplay prevented, user interaction needed');
+                    musicBtn.style.animation = 'pulse 1s infinite';
+                    musicBtn.title = 'Click to play music! 🎵';
+
+                    // Try to play on first user interaction
+                    const startMusic = () => {
+                        if (!musicPlaying) {
+                            music.play().then(() => {
+                                musicPlaying = true;
+                                musicBtn.textContent = '🎵';
+                                musicBtn.style.animation = '';
+                            });
+                            document.removeEventListener('click', startMusic);
+                            document.removeEventListener('touchstart', startMusic);
+                        }
+                    };
+                    document.addEventListener('click', startMusic, { once: true });
+                    document.addEventListener('touchstart', startMusic, { once: true });
+                });
+            }, 500);
+        });
+
+        // Add pulse animation for music button
+        const pulseStyle = document.createElement('style');
+        pulseStyle.innerHTML = `
+            @keyframes pulse {
+                0%, 100% { transform: scale(1); }
+                50% { transform: scale(1.2); }
+            }
+        `;
+        document.head.appendChild(pulseStyle);
+    </script>
+</body>
+
+</html>
