@@ -360,7 +360,8 @@
         <source src="a.mp3" type="audio/mpeg">
     </audio>
     <audio id="yesSound">
-        <source src="https://actions.google.com/sounds/v1/impacts/crash.ogg" type="audio/ogg">
+        <source src="https://actions.google.com/sounds/v1/foley/swoosh_short.ogg" type="audio/ogg">
+        <source src="https://www.soundjay.com/misc/sounds/small-crowd-applause-1.mp3" type="audio/mpeg">
     </audio>
 
     <div class="container-valentine">
@@ -406,7 +407,8 @@
                 <p>I can't wait to create a million more memories with you, to laugh at silly things, to support each
                     other's dreams, and to grow together.</p>
                 <p>Thank you for being you. Thank you for making me want to be better.</p>
-                <p style="text-align: right; margin-top: 20px;"><strong>Forever yours,<br>Bishow 💕</strong></p>
+                <p style="text-align: right; margin-top: 20px;"><strong>Forever yours,<br><span id="senderName"></span>
+                        💕</strong></p>
             </div>
 
             <div class="memory-box" id="memoryBox">
@@ -429,6 +431,18 @@
 
     <script src="js/jquery-3.2.1.min.js"></script>
     <script>
+        // Get name from URL parameter
+        function getNameFromURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const name = urlParams.get('name');
+            if (name) {
+                document.getElementById('senderName').textContent = name;
+            }
+        }
+
+        // Load name when page loads
+        window.addEventListener('DOMContentLoaded', getNameFromURL);
+
         // Calculate days until Valentine's Day 2026
         function updateCountdown() {
             const valentineDay = new Date('2026-02-14T00:00:00');
@@ -687,40 +701,6 @@
             }
         `;
         document.head.appendChild(style);
-
-        // Auto-play music on page load
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                const music = document.getElementById('bgMusic');
-                const musicBtn = document.getElementById('musicToggle');
-
-                // Try to auto-play (some browsers require user interaction)
-                music.play().then(() => {
-                    musicPlaying = true;
-                    musicBtn.textContent = '🎵';
-                }).catch(error => {
-                    // If autoplay fails, pulse button to encourage user to click
-                    console.log('Autoplay prevented, user interaction needed');
-                    musicBtn.style.animation = 'pulse 1s infinite';
-                    musicBtn.title = 'Click to play music! 🎵';
-
-                    // Try to play on first user interaction
-                    const startMusic = () => {
-                        if (!musicPlaying) {
-                            music.play().then(() => {
-                                musicPlaying = true;
-                                musicBtn.textContent = '🎵';
-                                musicBtn.style.animation = '';
-                            });
-                            document.removeEventListener('click', startMusic);
-                            document.removeEventListener('touchstart', startMusic);
-                        }
-                    };
-                    document.addEventListener('click', startMusic, { once: true });
-                    document.addEventListener('touchstart', startMusic, { once: true });
-                });
-            }, 500);
-        });
 
         // Add pulse animation for music button
         const pulseStyle = document.createElement('style');
