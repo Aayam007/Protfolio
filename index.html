@@ -255,6 +255,9 @@
 	<link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 	<link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
+	<!-- 3D Enhancement Styles -->
+	<link rel="stylesheet" href="enhancements.css">
+
 	<!-- Bootstrap CSS loaded with async pattern -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" media="print"
 		onload="this.media='all';this.onload=null;">
@@ -548,8 +551,7 @@
 							<p class="subheading">Hey! I am</p>
 							<h1 itemprop="name">Bishow Shrestha</h1>
 							<h2 itemprop="jobTitle">I'm a
-								<span class="txt-rotate" data-period="2000"
-									data-rotate='[ "DotNet Developer", "Full Stack Developer", "Software Engineer"]'></span>
+								<span class="typing-text"></span>
 							</h2>
 							<p class="mt-4 hero-tagline">
 								Senior Software Engineer specializing in .NET Core, ASP.NET Core, Angular, and
@@ -1613,6 +1615,14 @@
 	<!-- External scripts - deferred loading -->
 	<script src="https://code.iconify.design/1/1.0.7/iconify.min.js" defer></script>
 	<script src="script.js" defer></script>
+
+	<!-- Three.js for 3D particle effects and interactions -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"
+		integrity="sha512-dLxUelApnYxpLt6K2iomGngnHO83iUvZytA3YjDUCjT0HDOHKXnVYdf3hU4JjM8uEhxf9nD1/ey98U3VqN5O5w=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+
+	<!-- 3D Enhancement Scripts -->
+	<script src="enhancements-3d.js" defer></script>
 
 	<!-- Dark Mode Toggle Button -->
 	<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">

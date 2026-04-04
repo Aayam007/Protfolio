@@ -1,0 +1,531 @@
+/**
+ * Advanced Animations & Transitions
+ * Enhances existing portfolio with modern micro-interactions
+ * Complements enhancements-3d.js
+ */
+
+/* ========================================
+   1. SMOOTH TRANSITIONS & ANIMATIONS
+   ======================================== */
+
+/* Smooth all transitions globally */
+* {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hero section enhancements */
+.hero-wrap {
+    position: relative;
+    overflow: hidden;
+}
+
+#3d-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0 !important;
+    pointer-events: none;
+}
+
+.hero-wrap .text {
+    z-index: 2;
+    position: relative;
+}
+
+/* Typing cursor effect */
+.typing-text::after {
+    content: '|';
+    animation: blink 1s step-end infinite;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
+
+/* ========================================
+   2. PROJECT CARDS 3D HOVER EFFECTS
+   ======================================== */
+
+.project {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+.project:hover {
+    box-shadow: var(--shadow-xl);
+}
+
+/* Add shine effect on hover */
+.project::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent);
+    transition: left 0.5s ease;
+    z-index: 1;
+}
+
+.project:hover::before {
+    left: 100%;
+}
+
+/* ========================================
+   3. ENHANCED BUTTON INTERACTIONS
+   ======================================== */
+
+.btn {
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
+}
+
+/* ========================================
+   4. SERVICE CARDS ANIMATION
+   ======================================== */
+
+.services-1 {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.services-1::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg,
+            var(--primary-color),
+            var(--accent-color));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+}
+
+.services-1:hover::after {
+    opacity: 0.1;
+}
+
+.services-1:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: var(--shadow-xl);
+}
+
+.services-1 .icon {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.services-1:hover .icon {
+    transform: scale(1.2) rotateY(360deg);
+}
+
+/* ========================================
+   5. NAVBAR ENHANCEMENT
+   ======================================== */
+
+#ftco-navbar {
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    transition: all 0.3s ease;
+}
+
+#ftco-navbar.scrolled {
+    box-shadow: var(--shadow-lg);
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg,
+            var(--primary-color),
+            var(--accent-color));
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    width: 80%;
+}
+
+/* ========================================
+   6. SKILL BADGES ANIMATION
+   ======================================== */
+
+.badge {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+}
+
+.badge::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.badge:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: var(--shadow-md);
+}
+
+.badge:hover::before {
+    opacity: 1;
+}
+
+/* ========================================
+   7. SCROLL INDICATORS
+   ======================================== */
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+    z-index: 100;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    40% {
+        transform: translateX(-50%) translateY(-20px);
+    }
+
+    60% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+}
+
+/* ========================================
+   8. LOADING ANIMATIONS
+   ======================================== */
+
+.ftco-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.ftco-animate.ftco-animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger animations */
+.ftco-animate:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.ftco-animate:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.ftco-animate:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.ftco-animate:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+.ftco-animate:nth-child(5) {
+    transition-delay: 0.5s;
+}
+
+.ftco-animate:nth-child(6) {
+    transition-delay: 0.6s;
+}
+
+/* ========================================
+   9. FORM ENHANCEMENTS
+   ======================================== */
+
+.contact-form .form-control {
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.contact-form .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(108, 142, 244, 0.1);
+    transform: translateY(-2px);
+}
+
+.contact-form .form-group {
+    position: relative;
+}
+
+.contact-form .form-group label {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    color: var(--text-secondary);
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.contact-form .form-control:focus~label,
+.contact-form .form-control:not(:placeholder-shown)~label {
+    top: -10px;
+    left: 8px;
+    font-size: 0.75rem;
+    background: var(--surface-color);
+    padding: 0 4px;
+    color: var(--primary-color);
+}
+
+/* ========================================
+   10. PARALLAX ELEMENTS
+   ======================================== */
+
+[data-parallax] {
+    will-change: transform;
+    transition: transform 0.1s ease-out;
+}
+
+/* ========================================
+   11. GLASS MORPHISM CARDS
+   ======================================== */
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+html[data-theme="dark"] .glass-card {
+    background: rgba(30, 41, 59, 0.6);
+    border-color: rgba(241, 245, 249, 0.1);
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--primary-color);
+}
+
+/* ========================================
+   12. SECTION TRANSITIONS
+   ======================================== */
+
+section {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+section.fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+section.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========================================
+   13. DARK MODE SMOOTH TRANSITIONS
+   ======================================== */
+
+html {
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+html[data-theme="dark"] {
+    color-scheme: dark;
+}
+
+/* Smooth transition for all theme-based colors */
+body,
+.card,
+.navbar,
+.modal,
+.dropdown-menu,
+.btn,
+.form-control {
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+}
+
+/* ========================================
+   14. PERFORMANCE OPTIMIZATIONS
+   ======================================== */
+
+/* Use GPU acceleration for animations */
+.project,
+.services-1,
+.btn,
+.badge,
+.ftco-animate {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .typing-text::after {
+        animation: none;
+    }
+}
+
+/* ========================================
+   15. CURSOR TRAIL CANVAS
+   ======================================== */
+
+#cursor-trail-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* Hide on mobile */
+@media (max-width: 768px) {
+    #cursor-trail-canvas {
+        display: none;
+    }
+}
+
+/* ========================================
+   16. RESPONSIVE ADJUSTMENTS
+   ======================================== */
+
+@media (max-width: 768px) {
+
+    /* Reduce animation complexity on mobile */
+    .project:hover,
+    .services-1:hover {
+        transform: translateY(-5px) scale(1.01);
+    }
+
+    /* Disable 3D effects on mobile */
+    .project {
+        transform-style: flat !important;
+    }
+
+    /* Faster animations on mobile */
+    * {
+        transition-duration: 0.2s !important;
+    }
+}
+
+/* ========================================
+   17. ACCESSIBILITY ENHANCEMENTS
+   ======================================== */
+
+/* Focus visible for keyboard navigation */
+:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Skip to main content link */
+.skip-to-main {
+    position: absolute;
+    left: -9999px;
+    z-index: 999;
+    padding: 1em;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+}
+
+.skip-to-main:focus {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+}
