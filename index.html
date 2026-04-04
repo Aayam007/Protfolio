@@ -528,17 +528,8 @@ console.log(`💼 Let's build something amazing together!`);
 	<!-- Mermaid loaded dynamically only when needed (saves 679 KiB if no diagrams) -->
 
 	<script>
-		async function loadMarkdown() {
-			// Try to load the file so the HTML always stays in sync with the MD when served.
-			try {
-				const response = await fetch('./README.md', { cache: 'no-store' });
-				if (response.ok) {
-					return await response.text();
-				}
-			} catch (_) {
-				// ignore and fall back to embedded markdown
-			}
-
+		function loadMarkdown() {
+			// Use embedded markdown content
 			const fallbackEl = document.getElementById('md-fallback');
 			return (fallbackEl && fallbackEl.textContent) ? fallbackEl.textContent : '';
 		}
@@ -610,9 +601,8 @@ console.log(`💼 Let's build something amazing together!`);
 		}
 
 		function highlightCode(root) {
-			// Check if highlight.js loaded successfully
+			// Silently skip if highlight.js hasn't loaded yet
 			if (typeof hljs === 'undefined') {
-				console.warn('Highlight.js not loaded, skipping syntax highlighting');
 				return;
 			}
 
@@ -625,8 +615,7 @@ console.log(`💼 Let's build something amazing together!`);
 		}
 
 		(async () => {
-			const markdown = await loadMarkdown();
-
+			const markdown = loadMarkdown();
 			marked.setOptions({
 				gfm: true,
 				breaks: true
