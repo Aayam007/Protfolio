@@ -1,91 +1,126 @@
 // Main JavaScript file for Bishow Shrestha Portfolio
 // Modern, Clean, and Elegant Interactions
 
-$(document).ready(function() {
+$(document).ready(function () {
     console.log('Portfolio loaded successfully!');
-    
+
     // Initialize Dark Mode
     initDarkMode();
-    
+
     // Smooth scroll for navigation links
-    $('a[href^="#"]').on('click', function(event) {
+    $('a[href^="#"]').on('click', function (event) {
         var target = $(this.getAttribute('href'));
-        if(target.length) {
+        if (target.length) {
             event.preventDefault();
             $('html, body').stop().animate({
                 scrollTop: target.offset().top - 70
             }, 800, 'easeInOutCubic');
         }
     });
-    
+
     // Add active state to navigation
-    $(window).on('scroll', function() {
+    $(window).on('scroll', function () {
         var scrollPos = $(window).scrollTop() + 100;
-        
-        $('section[id]').each(function() {
+
+        $('section[id]').each(function () {
             var section = $(this);
             var sectionTop = section.offset().top;
             var sectionBottom = sectionTop + section.outerHeight();
             var sectionId = section.attr('id');
-            
-            if(scrollPos >= sectionTop && scrollPos < sectionBottom) {
+
+            if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
                 $('.navbar-nav .nav-link').removeClass('active');
                 $('.navbar-nav .nav-link[href="#' + sectionId + '"]').addClass('active');
             }
         });
     });
-    
+
     // Intersection Observer for fade-in animations
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
-    
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-            if(entry.isIntersecting) {
+
+    const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
                 entry.target.classList.add('fade-in');
                 observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
-    
+
     // Observe all animated elements
-    $('.ftco-animate').each(function() {
+    $('.ftco-animate').each(function () {
         observer.observe(this);
     });
-    
-    // Parallax effect for hero section
-    $(window).on('scroll', function() {
+
+    // Parallax effect for hero section (target existing hero text block)
+    $(window).on('scroll', function () {
         var scrolled = $(window).scrollTop();
-        $('.hero-content').css('transform', 'translateY(' + (scrolled * 0.3) + 'px)');
+        var $heroText = $('.hero-wrap .text');
+        if ($heroText.length) {
+            $heroText.css('transform', 'translateY(' + (scrolled * 0.15) + 'px)');
+        }
     });
-    
-    // Add hover effect for cards
-    $('.card, .services, .blog-entry, .tool-card').hover(
-        function() {
+
+    // Add hover effect for cards/tiles
+    $('.card, .services, .services-1, .blog-entry, .tool-card, .project, .block-18, .contact-info .box').hover(
+        function () {
             $(this).addClass('elevated');
         },
-        function() {
+        function () {
             $(this).removeClass('elevated');
         }
     );
-    
+
+    // Ripple effect on button clicks
+    $(document).on('click', '.btn', function (event) {
+        try {
+            if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                return;
+            }
+
+            var $btn = $(this);
+            var offset = $btn.offset();
+            if (!offset) return;
+
+            var x = event.pageX - offset.left;
+            var y = event.pageY - offset.top;
+            var size = Math.max($btn.outerWidth(), $btn.outerHeight());
+
+            $btn.find('.btn-ripple').remove();
+
+            var $ripple = $('<span class="btn-ripple"></span>');
+            $ripple.css({
+                width: size,
+                height: size,
+                left: (x - size / 2) + 'px',
+                top: (y - size / 2) + 'px'
+            });
+
+            $btn.append($ripple);
+            setTimeout(function () { $ripple.remove(); }, 700);
+        } catch (e) {
+            // No-op: ripple is a progressive enhancement
+        }
+    });
+
     // Smooth number counting animation
-    if($('.number').length) {
-        $('.number').each(function() {
+    if ($('.number').length) {
+        $('.number').each(function () {
             var $this = $(this);
             var countTo = $this.attr('data-number');
-            
+
             $({ countNum: 0 }).animate({
                 countNum: countTo
             }, {
                 duration: 2000,
                 easing: 'swing',
-                step: function() {
+                step: function () {
                     $this.text(Math.floor(this.countNum));
                 },
-                complete: function() {
+                complete: function () {
                     $this.text(this.countNum);
                 }
             });
@@ -98,21 +133,21 @@ function initDarkMode() {
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = document.querySelector('.theme-icon');
     const currentTheme = localStorage.getItem('theme') || 'light';
-    
+
     // Set initial theme
     document.documentElement.setAttribute('data-theme', currentTheme);
     updateThemeIcon(currentTheme, themeIcon);
-    
+
     // Toggle theme
-    if(themeToggle) {
-        themeToggle.addEventListener('click', function() {
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function () {
             let theme = document.documentElement.getAttribute('data-theme');
             let newTheme = theme === 'dark' ? 'light' : 'dark';
-            
+
             document.documentElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
             updateThemeIcon(newTheme, themeIcon);
-            
+
             // Add animation
             this.style.transform = 'rotate(360deg) scale(0.8)';
             setTimeout(() => {
@@ -123,7 +158,7 @@ function initDarkMode() {
 }
 
 function updateThemeIcon(theme, iconElement) {
-    if(iconElement) {
+    if (iconElement) {
         iconElement.textContent = theme === 'dark' ? '☀️' : '🌙';
     }
 }
@@ -175,14 +210,14 @@ function decodeBase64() {
 }
 
 // Color Picker
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const colorPicker = document.getElementById('colorPicker');
     if (colorPicker) {
-        colorPicker.addEventListener('input', function() {
+        colorPicker.addEventListener('input', function () {
             const hex = this.value;
             const rgb = hexToRgb(hex);
             const hsl = rgbToHsl(rgb.r, rgb.g, rgb.b);
-            
+
             document.getElementById('hexValue').textContent = hex.toUpperCase();
             document.getElementById('rgbValue').textContent = `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`;
             document.getElementById('hslValue').textContent = `hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`;
@@ -233,16 +268,16 @@ function generatePassword() {
     const length = document.getElementById('passwordLength').value;
     const includeNumbers = document.getElementById('includeNumbers').checked;
     const includeSymbols = document.getElementById('includeSymbols').checked;
-    
+
     let chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     if (includeNumbers) chars += '0123456789';
     if (includeSymbols) chars += '!@#$%^&*()_+-=[]{}|;:,.<>?';
-    
+
     let password = '';
     for (let i = 0; i < length; i++) {
         password += chars.charAt(Math.floor(Math.random() * chars.length));
     }
-    
+
     document.getElementById('generatedPassword').value = password;
 }
 
@@ -257,12 +292,12 @@ function copyPassword() {
 function generateLorem() {
     const paragraphs = document.getElementById('paragraphCount').value;
     const loremText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`;
-    
+
     let result = '';
     for (let i = 0; i < paragraphs; i++) {
         result += loremText + '\n\n';
     }
-    
+
     document.getElementById('loremOutput').textContent = result.trim();
 }
 
@@ -292,7 +327,7 @@ function convertTimestamp() {
         document.getElementById('timestampOutput').innerHTML = '<p style="color: #dc3545;">Please enter a timestamp</p>';
         return;
     }
-    
+
     const date = new Date(parseInt(timestamp) * 1000);
     const output = `
         <p><strong>Date:</strong> ${date.toLocaleDateString()}</p>
@@ -313,8 +348,8 @@ function getCurrentTimestamp() {
 function convertCase(caseType) {
     const input = document.getElementById('caseInput').value;
     let output = '';
-    
-    switch(caseType) {
+
+    switch (caseType) {
         case 'upper':
             output = input.toUpperCase();
             break;
@@ -328,13 +363,13 @@ function convertCase(caseType) {
             output = input.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
             break;
     }
-    
+
     document.getElementById('caseOutput').textContent = output;
 }
 
 // UUID Generator
 function generateUUID() {
-    const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
         const r = Math.random() * 16 | 0;
         const v = c === 'x' ? r : (r & 0x3 | 0x8);
         return v.toString(16);

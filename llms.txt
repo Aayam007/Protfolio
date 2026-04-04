@@ -1,0 +1,85 @@
+# Bishow Shrestha - Senior Software Engineer Portfolio
+
+> Personal portfolio website of Bishow Kaji Shrestha, a Senior Software Engineer with 6+ years of experience in full-stack development.
+
+## About
+
+Bishow Kaji Shrestha is a Senior Software Engineer at Infinite Computer Solutions with expertise in:
+- **Languages & Frameworks**: C#, .NET Core, ASP.NET Core, Angular, TypeScript, jQuery
+- **Databases**: SQL Server, Oracle, PostgreSQL, Redis
+- **Domain Expertise**: Healthcare (HIPAA), Core Banking Systems, Agro Management, Insurance
+- **Certifications**: Certified SAFe® Practitioner (2024), Registered Scrum Master (2021)
+- **Methodologies**: Agile, Scrum, SAFe, Microservices Architecture
+
+## Professional Experience
+
+1. **Senior Software Engineer** - Infinite Computer Solutions (Feb 2024 - Present)
+2. **Software Engineer** - Cotiviti Nepal (Jan 2023 - Jan 2024)
+3. **Associate Team Lead** - InfoDevelopers Pvt. Ltd. (Oct 2021 - Jan 2023)
+4. **Sr. Software Engineer** - InfoDevelopers Pvt. Ltd. (Dec 2020 - Oct 2021)
+5. **Software Developer** - InfoDevelopers Pvt. Ltd. (Mar 2020 - Dec 2020)
+6. **Junior .NET Developer** - BitsPanda Technology (Dec 2019 - Feb 2020)
+
+## Education
+
+- **Master of Information Technology** - MIT, Australia (Ongoing)
+- **Bachelor of Computer Application** - Tribhuvan University (2021)
+- **+2 Science** - National Examination Board (2014)
+- **School Leaving Certificate** - Government of Nepal (2012)
+
+## Site Structure
+
+- **Home**: Main landing page with introduction
+- **About**: Professional background and career summary
+- **Resume**: Detailed education and work experience
+- **Skills**: Technical expertise and domain knowledge
+- **Tools**: Development tools and utilities showcase
+- **Services**: Professional services offered
+- **Projects**: Portfolio of completed projects
+- **Blog**: Technical articles and insights
+- **Contact**: Get in touch information
+
+## Key Projects
+
+- Healthcare systems with HIPAA compliance
+- Core Banking System (CBS) development
+- Government financial systems
+- Agro-related CMS solutions
+- Microservices architecture implementations
+
+## Technical Skills
+
+**Languages**: C#, TypeScript, JavaScript, HTML5, CSS3, SQL
+**Frameworks**: .NET Core, ASP.NET Core, Angular, jQuery, Bootstrap
+**Databases**: SQL Server, Oracle, PostgreSQL, Redis
+**Tools**: Git, JIRA, Jenkins, Bitbucket, Bamboo, Octopus Deploy, Telerik Reporting
+**Specialized**: OCR, Identity Server, Elastic Search, RabbitMQ, SignalR, RESTful API
+
+## Contact Information
+
+- **Email**: aayambishow007@gmail.com
+- **Phone**: 9843573229
+- **Website**: https://bishowshrestha.com.np/
+
+## Navigation
+
+/ - Home page
+/#about-section - About section
+/#resume-section - Resume/Experience
+/#skills-section - Technical skills
+/#tools-section - Development tools
+/#services-section - Professional services
+/#projects-section - Portfolio projects
+/#blog-section - Blog posts
+/#contact-section - Contact form
+
+## Achievements
+
+- 15+ Projects Successfully Delivered
+- Certified SAFe® Practitioner (2024)
+- Registered Scrum Master (2021)
+- 6+ Years of Professional Experience
+
+## This File
+
+This llms.txt file provides structured information about Bishow Shrestha's portfolio website to help LLM crawlers understand the content efficiently. Last updated: April 2026.
