@@ -348,16 +348,11 @@ class CursorTrail {
 // 7. INITIALIZATION
 // -----------------------------------------
 function init3DEnhancements() {
-    console.log('🚀 Initializing 3D enhancements...');
-
     // Check if Three.js is loaded
     if (typeof THREE === 'undefined') {
-        console.error('❌ Three.js not loaded. Skipping 3D enhancements.');
-        console.log('Make sure Three.js CDN is loading before enhancements-3d.js');
+        // Silently skip if Three.js not loaded
         return;
     }
-
-    console.log('✅ Three.js loaded successfully (version r' + THREE.REVISION + ')');
 
     // Initialize particle background for hero section
     const heroSection = document.getElementById('home-section');

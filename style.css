@@ -127,18 +127,19 @@ body .container-fluid {
 #ftco-navbar {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  background: rgba(250, 251, 252, 0.72) !important;
+  background: rgba(250, 251, 252, 0.95) !important;
   border-bottom: 1px solid var(--border-color);
   transition: background-color var(--transition-slow), border-color var(--transition-slow);
 }
 
 html[data-theme="dark"] #ftco-navbar {
-  background: rgba(15, 23, 42, 0.72) !important;
+  background: rgba(15, 23, 42, 0.95) !important;
 }
 
 #ftco-navbar .navbar-brand {
   font-weight: 700;
   letter-spacing: 0.2px;
+  color: var(--text-primary) !important;
 }
 
 #ftco-navbar .navbar-brand span {
@@ -150,13 +151,14 @@ html[data-theme="dark"] #ftco-navbar {
 
 #ftco-navbar .navbar-nav .nav-link {
   position: relative;
-  color: var(--text-secondary) !important;
+  color: var(--text-primary) !important;
+  font-weight: 500;
   transition: color var(--transition-fast);
 }
 
 #ftco-navbar .navbar-nav .nav-link:hover,
 #ftco-navbar .navbar-nav .nav-link.active {
-  color: var(--text-primary) !important;
+  color: var(--primary-color) !important;
 }
 
 #ftco-navbar .navbar-nav .nav-link span {
@@ -179,6 +181,22 @@ html[data-theme="dark"] #ftco-navbar {
 #ftco-navbar .navbar-nav .nav-link:hover span::after,
 #ftco-navbar .navbar-nav .nav-link.active span::after {
   transform: scaleX(1);
+}
+
+/* Fix contrast issues for accessibility */
+.navbar-toggler {
+  color: var(--text-primary) !important;
+  border-color: var(--text-primary) !important;
+  opacity: 0.9;
+}
+
+.navbar-toggler:hover,
+.navbar-toggler:focus {
+  opacity: 1;
+}
+
+.navbar-toggler .oi {
+  color: var(--text-primary) !important;
 }
 
 /* Hero polish: subtle gradient orbs */
