@@ -16,10 +16,19 @@ class ParticleBackground {
         this.container = document.getElementById(containerId);
         if (!this.container) return;
 
+        // Cache dimensions to avoid forced reflows
+        this.cachedWidth = 0;
+        this.cachedHeight = 0;
+        this.resizeScheduled = false;
+
         this.scene = new THREE.Scene();
+
+        // Get initial dimensions using ResizeObserver or fallback
+        this.updateCachedDimensions();
+
         this.camera = new THREE.PerspectiveCamera(
             75,
-            this.container.offsetWidth / this.container.offsetHeight,
+            this.cachedWidth / this.cachedHeight,
             0.1,
             1000
         );
@@ -29,7 +38,7 @@ class ParticleBackground {
             antialias: true
         });
 
-        this.renderer.setSize(this.container.offsetWidth, this.container.offsetHeight);
+        this.renderer.setSize(this.cachedWidth, this.cachedHeight);
         this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         this.container.appendChild(this.renderer.domElement);
 
@@ -38,6 +47,12 @@ class ParticleBackground {
         this.createParticles();
         this.addEventListeners();
         this.animate();
+    }
+
+    updateCachedDimensions() {
+        // Batch dimension reads to avoid forced reflows
+        this.cachedWidth = this.container.offsetWidth;
+        this.cachedHeight = this.container.offsetHeight;
     }
 
     createParticles() {
@@ -99,11 +114,46 @@ class ParticleBackground {
     }
 
     addEventListeners() {
-        window.addEventListener('resize', () => {
-            this.camera.aspect = this.container.offsetWidth / this.container.offsetHeight;
-            this.camera.updateProjectionMatrix();
-            this.renderer.setSize(this.container.offsetWidth, this.container.offsetHeight);
-        });
+        // Use ResizeObserver for better performance (avoids forced reflows)
+        if ('ResizeObserver' in window) {
+            const resizeObserver = new ResizeObserver(entries => {
+                if (!this.resizeScheduled) {
+                    this.resizeScheduled = true;
+                    requestAnimationFrame(() => {
+                        for (const entry of entries) {
+                            const { width, height } = entry.contentRect;
+                            this.cachedWidth = width;
+                            this.cachedHeight = height;
+                            this.handleResize();
+                        }
+                        this.resizeScheduled = false;
+                    });
+                }
+            });
+            resizeObserver.observe(this.container);
+        } else {
+            // Fallback to window resize with debouncing
+            let resizeTimeout;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(() => {
+                    if (!this.resizeScheduled) {
+                        this.resizeScheduled = true;
+                        requestAnimationFrame(() => {
+                            this.updateCachedDimensions();
+                            this.handleResize();
+                            this.resizeScheduled = false;
+                        });
+                    }
+                }, 100);
+            });
+        }
+    }
+
+    handleResize() {
+        this.camera.aspect = this.cachedWidth / this.cachedHeight;
+        this.camera.updateProjectionMatrix();
+        this.renderer.setSize(this.cachedWidth, this.cachedHeight);
     }
 
     updateTheme() {
@@ -170,17 +220,37 @@ class Skill3D {
 class ProjectCard3D {
     constructor(cardElement) {
         this.card = cardElement;
+        this.cachedRect = null;
+        this.rectUpdateScheduled = false;
         this.addTiltEffect();
     }
 
     addTiltEffect() {
-        this.card.addEventListener('mousemove', e => {
-            const rect = this.card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
+        // Cache rect on first interaction and update periodically
+        const updateRect = () => {
+            if (!this.rectUpdateScheduled) {
+                this.rectUpdateScheduled = true;
+                requestAnimationFrame(() => {
+                    this.cachedRect = this.card.getBoundingClientRect();
+                    this.rectUpdateScheduled = false;
+                });
+            }
+        };
 
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
+        this.card.addEventListener('mouseenter', () => {
+            updateRect();
+        });
+
+        this.card.addEventListener('mousemove', e => {
+            if (!this.cachedRect) {
+                this.cachedRect = this.card.getBoundingClientRect();
+            }
+
+            const x = e.clientX - this.cachedRect.left;
+            const y = e.clientY - this.cachedRect.top;
+
+            const centerX = this.cachedRect.width / 2;
+            const centerY = this.cachedRect.height / 2;
 
             const rotateX = (y - centerY) / 10;
             const rotateY = (centerX - x) / 10;

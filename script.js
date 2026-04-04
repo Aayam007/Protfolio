@@ -16,21 +16,46 @@ $(document).ready(function () {
         }
     });
 
-    // Add active state to navigation
-    $(window).on('scroll', function () {
-        var scrollPos = $(window).scrollTop() + 100;
+    // Add active state to navigation (optimized to avoid forced reflows)
+    var scrollScheduled = false;
+    var sectionPositions = [];
 
+    // Cache section positions on load and resize
+    function cacheSectionPositions() {
+        sectionPositions = [];
         $('section[id]').each(function () {
             var section = $(this);
-            var sectionTop = section.offset().top;
-            var sectionBottom = sectionTop + section.outerHeight();
-            var sectionId = section.attr('id');
-
-            if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
-                $('.navbar-nav .nav-link').removeClass('active');
-                $('.navbar-nav .nav-link[href="#' + sectionId + '"]').addClass('active');
-            }
+            sectionPositions.push({
+                id: section.attr('id'),
+                top: section.offset().top,
+                bottom: section.offset().top + section.outerHeight()
+            });
         });
+    }
+
+    cacheSectionPositions();
+    $(window).on('resize', function () {
+        clearTimeout(this.resizeTimeout);
+        this.resizeTimeout = setTimeout(cacheSectionPositions, 250);
+    });
+
+    $(window).on('scroll', function () {
+        if (!scrollScheduled) {
+            scrollScheduled = true;
+            requestAnimationFrame(function () {
+                var scrollPos = $(window).scrollTop() + 100;
+
+                for (var i = 0; i < sectionPositions.length; i++) {
+                    var section = sectionPositions[i];
+                    if (scrollPos >= section.top && scrollPos < section.bottom) {
+                        $('.navbar-nav .nav-link').removeClass('active');
+                        $('.navbar-nav .nav-link[href="#' + section.id + '"]').addClass('active');
+                        break;
+                    }
+                }
+                scrollScheduled = false;
+            });
+        }
     });
 
     // Intersection Observer for fade-in animations
@@ -53,12 +78,19 @@ $(document).ready(function () {
         observer.observe(this);
     });
 
-    // Parallax effect for hero section (target existing hero text block)
+    // Parallax effect for hero section (optimized with RAF)
+    var parallaxScheduled = false;
     $(window).on('scroll', function () {
-        var scrolled = $(window).scrollTop();
-        var $heroText = $('.hero-wrap .text');
-        if ($heroText.length) {
-            $heroText.css('transform', 'translateY(' + (scrolled * 0.15) + 'px)');
+        if (!parallaxScheduled) {
+            parallaxScheduled = true;
+            requestAnimationFrame(function () {
+                var scrolled = $(window).scrollTop();
+                var $heroText = $('.hero-wrap .text');
+                if ($heroText.length) {
+                    $heroText.css('transform', 'translateY(' + (scrolled * 0.15) + 'px)');
+                }
+                parallaxScheduled = false;
+            });
         }
     });
 
@@ -72,7 +104,7 @@ $(document).ready(function () {
         }
     );
 
-    // Ripple effect on button clicks
+    // Ripple effect on button clicks (optimized to avoid forced reflows)
     $(document).on('click', '.btn', function (event) {
         try {
             if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -80,25 +112,29 @@ $(document).ready(function () {
             }
 
             var $btn = $(this);
-            var offset = $btn.offset();
-            if (!offset) return;
 
-            var x = event.pageX - offset.left;
-            var y = event.pageY - offset.top;
-            var size = Math.max($btn.outerWidth(), $btn.outerHeight());
+            // Use RAF to batch geometric reads
+            requestAnimationFrame(function () {
+                var offset = $btn.offset();
+                if (!offset) return;
 
-            $btn.find('.btn-ripple').remove();
+                var x = event.pageX - offset.left;
+                var y = event.pageY - offset.top;
+                var size = Math.max($btn.outerWidth(), $btn.outerHeight());
 
-            var $ripple = $('<span class="btn-ripple"></span>');
-            $ripple.css({
-                width: size,
-                height: size,
-                left: (x - size / 2) + 'px',
-                top: (y - size / 2) + 'px'
+                $btn.find('.btn-ripple').remove();
+
+                var $ripple = $('<span class="btn-ripple"></span>');
+                $ripple.css({
+                    width: size,
+                    height: size,
+                    left: (x - size / 2) + 'px',
+                    top: (y - size / 2) + 'px'
+                });
+
+                $btn.append($ripple);
+                setTimeout(function () { $ripple.remove(); }, 700);
             });
-
-            $btn.append($ripple);
-            setTimeout(function () { $ripple.remove(); }, 700);
         } catch (e) {
             // No-op: ripple is a progressive enhancement
         }
