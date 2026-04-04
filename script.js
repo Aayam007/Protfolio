@@ -2,8 +2,6 @@
 // Modern, Clean, and Elegant Interactions
 
 $(document).ready(function () {
-    console.log('Portfolio loaded successfully!');
-
     // Initialize Dark Mode
     initDarkMode();
 
