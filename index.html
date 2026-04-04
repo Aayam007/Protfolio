@@ -15,11 +15,20 @@
 	<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 	<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 
-	<!-- GitHub Markdown styling (closest to typical Markdown preview) -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.6.1/github-markdown.min.css">
+	<!-- GitHub Markdown styling (non-blocking) - saves 770ms from critical path -->
+	<link rel="preload" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.6.1/github-markdown.min.css" as="style"
+		onload="this.onload=null;this.rel='stylesheet'">
+	<noscript>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.6.1/github-markdown.min.css">
+	</noscript>
 
-	<!-- Code highlighting from cdnjs (more reliable than jsDelivr for highlight.js) -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+	<!-- Code highlighting (non-blocking) - saves 750ms from critical path -->
+	<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"
+		as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<noscript>
+		<link rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+	</noscript>
 
 	<style>
 		:root {
@@ -534,11 +543,11 @@ console.log(`💼 Let's build something amazing together!`);
 </div>
   </script>
 
-	<!-- Markdown renderer -->
-	<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+	<!-- Markdown renderer (deferred - saves 910ms from critical path) -->
+	<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js" defer></script>
 
-	<!-- Highlight.js - browser compatible build from cdnjs (more reliable) -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+	<!-- Highlight.js (deferred - saves 1,190ms from critical path) -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" defer></script>
 
 	<!-- Mermaid loaded dynamically only when needed (saves 679 KiB if no diagrams) -->
 
@@ -630,6 +639,18 @@ console.log(`💼 Let's build something amazing together!`);
 		}
 
 		(async () => {
+			// Wait for deferred scripts (marked.js and highlight.js) to load
+			let attempts = 0;
+			while ((typeof marked === 'undefined' || typeof hljs === 'undefined') && attempts < 100) {
+				await new Promise(resolve => setTimeout(resolve, 50));
+				attempts++;
+			}
+
+			if (typeof marked === 'undefined') {
+				console.error('Marked.js failed to load');
+				return;
+			}
+
 			const markdown = loadMarkdown();
 			marked.setOptions({
 				gfm: true,
