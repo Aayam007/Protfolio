@@ -161,15 +161,13 @@
 
 		/* Prevent layout shift for common image sizes */
 		.markdown-body img[width="500"] {
-			min-height: 375px;
 			/* 500px * 4/3 aspect ratio (actual GIF dimensions: 480x360) */
-			aspect-ratio: 500 / 375;
+			aspect-ratio: 4 / 3;
 		}
 
 		.markdown-body img[width="400"] {
-			min-height: 300px;
 			/* 400px * 4/3 aspect ratio (actual GIF dimensions: 800x600) */
-			aspect-ratio: 400 / 300;
+			aspect-ratio: 4 / 3;
 		}
 
 		/* Badge images should have fixed height */
@@ -228,7 +226,14 @@
 </p>
 
 <div align="center">
-  <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="500" height="375" alt="Coding GIF"/>
+  <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/source.gif" 
+       srcset="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif 480w,
+               https://media.giphy.com/media/qgQUggAC3Pfv687qPC/source.gif 800w" 
+       sizes="(max-width: 768px) 100vw, 500px"
+       width="500" 
+       height="375" 
+       alt="Coding GIF" 
+       loading="lazy"/>
 </div>
 
 ## 🚀 About Me
@@ -255,7 +260,14 @@ public class BiShowShrestha : Developer
 }
 ```
 
-<img align="right" alt="Coding" width="400" height="300" src="https://raw.githubusercontent.com/devSouvik/devSouvik/master/gif3.gif">
+<img align="right" 
+     alt="Coding" 
+     width="400" 
+     height="300" 
+     src="https://raw.githubusercontent.com/devSouvik/devSouvik/master/gif3.gif"
+     srcset="https://raw.githubusercontent.com/devSouvik/devSouvik/master/gif3.gif 1x,
+             https://raw.githubusercontent.com/devSouvik/devSouvik/master/gif3.gif 2x"
+     loading="lazy">
 
 ### 💼 Professional Journey
 
