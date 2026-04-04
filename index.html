@@ -1,1588 +1,358 @@
-﻿<!DOCTYPE html>
-<html lang="en" itemscope itemtype="https://schema.org/Person">
-
-<head>
-	<title>Bishow Shrestha | Senior Software Engineer | .NET Core</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="keywords"
-		content="Senior Software Engineer, .NET Core, ASP.NET Core, Angular, TypeScript, C#, SQL Server, Healthcare HIPAA, Core Banking, Agile Scrum, SAFe Practitioner, Microservices, Full Stack Developer">
-	<meta name="author" content="Bishow Kaji Shrestha">
-	<meta name="description"
-		content="Bishow Shrestha - Senior Software Engineer with 6+ years of experience in C#, ASP.NET Core, Angular, and SQL Server. Certified SAFe Practitioner and Scrum Master specializing in healthcare systems, Core Banking, and microservices architecture.">
-
-	<!-- Open Graph / Facebook Meta Tags for Social Sharing -->
-	<meta property="og:type" content="profile" />
-	<meta property="og:url" content="https://bishowshrestha.com.np/" />
-	<meta property="og:title" content="Bishow Shrestha | Senior Software Engineer | .NET Core" />
-	<meta property="og:description"
-		content="Senior Software Engineer with 6+ years of experience in C#, ASP.NET Core, Angular, and SQL Server. Certified SAFe Practitioner and Scrum Master." />
-	<meta property="og:image" content="https://bishowshrestha.com.np/images/bishow-shrestha-og.jpg" />
-	<meta property="og:image:width" content="1200" />
-	<meta property="og:image:height" content="630" />
-	<meta property="og:image:alt" content="Bishow Shrestha - Senior Software Engineer Portfolio" />
-	<meta property="og:locale" content="en_US" />
-	<meta property="og:site_name" content="Bishow Shrestha Portfolio" />
-	<meta property="profile:first_name" content="Bishow" />
-	<meta property="profile:last_name" content="Shrestha" />
-	<meta property="profile:username" content="bishowshrestha" />
-
-	<!-- Twitter Card Meta Tags for Twitter Sharing -->
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:url" content="https://bishowshrestha.com.np/" />
-	<meta name="twitter:title" content="Bishow Shrestha | Senior Software Engineer | .NET Core" />
-	<meta name="twitter:description"
-		content="Senior Software Engineer with 6+ years of experience in C#, ASP.NET Core, Angular, and SQL Server. Certified SAFe Practitioner and Scrum Master." />
-	<meta name="twitter:image" content="https://bishowshrestha.com.np/images/bishow-shrestha-og.jpg" />
-	<meta name="twitter:image:alt" content="Bishow Shrestha - Senior Software Engineer Portfolio" />
-	<meta name="twitter:creator" content="@bishowshrestha" />
-
-	<!-- Additional SEO Meta Tags -->
-	<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-	<meta name="googlebot" content="index, follow" />
-	<meta name="bingbot" content="index, follow" />
-	<meta name="theme-color" content="#6c8ef4" />
-	<meta name="mobile-web-app-capable" content="yes" />
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="default" />
-	<meta name="apple-mobile-web-app-title" content="Bishow Shrestha" />
-
-	<!-- Canonical URL -->
-	<link rel="canonical" href="https://bishowshrestha.com.np/" />
-
-	<!-- Sitemap for Search Engines -->
-	<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-
-	<!-- LLM crawlers reference -->
-	<link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-friendly site information" />
-
-	<!-- Preconnect to external domains for faster loading -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link rel="preconnect" href="https://code.jquery.com" crossorigin>
-	<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-	<link rel="preconnect" href="https://www.googletagmanager.com">
-
-	<!-- Critical font loading with display=swap already optimized -->
-	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
-		rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
-
-	<!-- Favicon - Modern SVG with fallback -->
-	<link rel="icon" type="image/svg+xml"
-		href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%236c8ef4'/%3E%3Cstop offset='100%25' style='stop-color:%23a78bfa'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='20' fill='url(%23g)'/%3E%3Ctext x='50' y='72' font-family='Arial,sans-serif' font-size='60' font-weight='700' fill='white' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
-	<link rel="alternate icon" type="image/png"
-		href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAA7AAAAOwBeShxvQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAKCSURBVFiFzZfPaxNBFMe/M5vdZJNNk6ZN0x+aWkuptYhQqKIHQT0IHvwP/Av8D7x48ODB/8CLBy9S8KAHoSdBEKQoSLG0tZZqbU3TJk2ySbPZ3ZnxkG2TJrtJa30wMLsz7837zLz35r0B/udSDoC11hoA+gB0A+gE0AagVa9pAFQATgAUABQB5AHkAOQAnALIA8jqtQzgVK8VAEUIUQZgAGgA0KzXJgCNem3Wazu9psW/C4AKwAFgA7ABWPVqBWDRa7NeWwCYL+rvuQClp6fnPYDS09PzHoBSqVS+AFCVSuULAJVKpXL9c7le01fXNeh9g/5VXRF/X1cSQuQBKJVKZaParlar1fX19fVlAMva2toXAGptbW0ZQG1tbW0ZgFpZWVlZWlr6uLS09FEIIf5Xcq8DKCoqKiqqqChq3boK3fooFXVFFLXr+n7qJYLDAHxra2tfALy+vr5FAF6v1+vxeDzLdrvdtba2tuh0OledTqfH4XC47Xa72+l0rnZ0dGw4nc5Vt9u91tHRselwONbcbveq2+1ec7lca3a7/avL5Vpra2vbdLlcbpfL9dXj8XitVutXq9W6ZrVa1ywWS8Zqta5ZLBY/gAyEyADwQYg0AJ/Vak1brda0xWJJu1yuTVtb25bFYsm43e6s2+1eds/3LQMI5fN5PwB/Pp/3A/Dn8/llAMF8Pr8MIJjL5YIAQvl8PgggFAgEwrlcLgwgHAgEQoVCIQwglM/nI4VCIQIgEgwGo4FAIFwsFqPFYjFWLBajhUIhViwWY/l8PlYsFuO5XC5RKBTixWIxUSgUEsViMVEoFJK5XC4JIAmBAZAAIA8hEgBsECIBwKY3IhGJxEsA3N/z/Rc/AWwvFh1Y+BESAAAAAElFTkSuQmCC">
-	<link rel="apple-touch-icon" sizes="180x180"
-		href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cdefs%3E%3ClinearGradient id='g2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%236c8ef4'/%3E%3Cstop offset='100%25' style='stop-color:%23a78bfa'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='180' height='180' rx='40' fill='url(%23g2)'/%3E%3Ctext x='90' y='130' font-family='Arial,sans-serif' font-size='110' font-weight='700' fill='white' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
-
-	<!-- Critical CSS Inline for instant render -->
-	<style>
-		/* Critical above-the-fold styles */
-		:root {
-			--primary-color: #6c8ef4;
-			--accent-color: #a78bfa;
-			--bg-color: #fafbfc;
-			--surface-color: #fff;
-			--text-primary: #1f2937;
-			--text-secondary: #6b7280;
-			--border-color: rgba(31, 41, 55, .12);
-			--transition-fast: .2s cubic-bezier(.4, 0, .2, 1);
-			--transition-base: .3s cubic-bezier(.4, 0, .2, 1);
-			--transition-slow: .5s cubic-bezier(.4, 0, .2, 1)
-		}
-
-		html[data-theme=dark] {
-			--bg-color: #0f172a;
-			--surface-color: #1e293b;
-			--text-primary: #f1f5f9;
-			--text-secondary: #cbd5e1;
-			--border-color: rgba(241, 245, 249, .14)
-		}
-
-		* {
-			margin: 0;
-			padding: 0;
-			box-sizing: border-box;
-			font-family: Poppins, sans-serif
-		}
-
-		html,
-		body {
-			background: var(--bg-color);
-			color: var(--text-primary);
-			transition: background-color var(--transition-slow), color var(--transition-slow)
-		}
-
-		body {
-			font-display: swap;
-			text-rendering: optimizeSpeed
-		}
-
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6,
-		p {
-			line-height: 1.5
-		}
-
-		img {
-			height: auto;
-			max-width: 100%;
-			display: block
-		}
-
-		.hero-wrap {
-			position: relative;
-			overflow: hidden;
-			min-height: 100vh
-		}
-
-		#ftco-navbar {
-			backdrop-filter: blur(12px);
-			-webkit-backdrop-filter: blur(12px);
-			background: rgba(250, 251, 252, .72) !important;
-			border-bottom: 1px solid var(--border-color);
-			transition: background-color var(--transition-slow)
-		}
-
-		html[data-theme=dark] #ftco-navbar {
-			background: rgba(15, 23, 42, .72) !important
-		}
-
-		.ftco-animate {
-			opacity: 0;
-			visibility: hidden
-		}
-
-		.hero-tagline {
-			font-size: 1.1rem;
-			color: rgba(255, 255, 255, 0.9)
-		}
-
-		/* Prevent layout shift for images */
-		img:not([width]):not([height]) {
-			aspect-ratio: attr(width) / attr(height);
-		}
-
-		/* Optimize partner logo container */
-		.partner img {
-			width: 150px;
-			height: 50px;
-			object-fit: contain;
-		}
-
-		/* Additional critical styles for hero section to prevent CLS */
-		.hero-wrap .overlay {
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			background: rgba(0, 0, 0, 0.4);
-		}
-
-		.hero-wrap .container {
-			position: relative;
-			z-index: 2;
-		}
-
-		.js-fullheight {
-			min-height: 100vh;
-			display: flex;
-			align-items: center;
-		}
-
-		.slider-text {
-			min-height: 100vh;
-		}
-
-		/* Optimize layout stability */
-		.ftco-section {
-			position: relative;
-		}
-
-		.ftco-no-pt {
-			padding-top: 0 !important;
-		}
-
-		.ftco-no-pb {
-			padding-bottom: 0 !important;
-		}
-
-		/* Preload critical hero background */
-		.hero-wrap::before {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
-			z-index: 0;
-		}
-
-		/* SVG Loader styles - moved from inline attributes */
-		.circular {
-			width: 48px;
-			height: 48px;
-		}
-
-		.path-bg {
-			fill: none;
-			stroke-width: 4;
-			stroke: #eeeeee;
-		}
-
-		.path {
-			fill: none;
-			stroke-width: 4;
-			stroke-miterlimit: 10;
-			stroke: #F96D00;
-		}
-	</style>
-
-	<!-- DNS prefetch for external resources -->
-	<link rel="dns-prefetch" href="https://fonts.googleapis.com">
-	<link rel="dns-prefetch" href="https://fonts.gstatic.com">
-	<link rel="dns-prefetch" href="https://code.jquery.com">
-	<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-	<link rel="dns-prefetch" href="https://www.googletagmanager.com">
-	<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
-
-	<!-- Preload only critical CSS for instant render -->
-	<link rel="preload" href="style.css?v=202604" as="style" onload="this.onload=null;this.rel='stylesheet'">
-
-	<!-- 3D Enhancement Styles - deferred for non-blocking render -->
-	<link rel="preload" href="enhancements.css?v=202604" as="style" onload="this.onload=null;this.rel='stylesheet'">
-
-	<!-- Bootstrap CSS loaded with async pattern from CDN -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-		integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"
-		media="print" onload="this.media='all';this.onload=null;">
-
-	<!-- Minimal icon replacements - critical icons inlined, heavy icon fonts removed -->
-	<link rel="stylesheet" href="icons-minimal.css?v=202604">
-
-	<!-- Placeholder styles for missing work images -->
-	<link rel="stylesheet" href="css/placeholder-images.css?v=202604">
-
-	<!-- Layout and alignment fixes -->
-	<link rel="stylesheet" href="css/layout-fixes.css?v=202604">
-
-	<!-- Non-critical CSS loaded asynchronously -->
-	<link rel="stylesheet" href="css/animate.css" media="print" onload="this.media='all';this.onload=null;">
-	<link rel="stylesheet" href="css/aos.css" media="print" onload="this.media='all';this.onload=null;">
-
-	<!-- Fallback for browsers that don't support preload -->
-	<noscript>
-		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
-			rel="stylesheet">
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-		<link rel="stylesheet" href="icons-minimal.css?v=202604">
-		<link rel="stylesheet" href="css/placeholder-images.css?v=202604">
-		<link rel="stylesheet" href="css/layout-fixes.css?v=202604">
-		<link rel="stylesheet" href="css/animate.css">
-		<link rel="stylesheet" href="css/aos.css">
-		<link rel="stylesheet" href="style.css?v=202604">
-		<link rel="stylesheet" href="enhancements.css?v=202604">
-	</noscript>
-
-	<!-- Polyfill for CSS preload in older browsers -->
-	<script>
-		/**
-		 * PERFORMANCE OPTIMIZATION STRATEGY:
-		 * - Critical CSS: Inlined in critical.css
-		 * - Non-critical CSS: Loaded async with media="print" technique
-		 * - Third-party scripts: Lazy loaded using requestIdleCallback()
-		 * - Three.js: Loaded only when hero section is visible
-		 * - Total initial JS reduction: ~172KB
-		 */
-		!function (n) {
-			" use strict"; n.loadCSS || (n.loadCSS = function () { }); var o = loadCSS.relpreload = {}; if
-				(o.support = function () {
-					var e; try { e = n.document.createElement("link").relList.supports("preload") } catch
-					(t) { e = !1 } return function () { return e }
-				}(), o.bindMediaToggle = function (t) {
-					var e = t.media || "all";
-					function a() {
-						t.addEventListener ? t.removeEventListener("load", a) : t.attachEvent &&
-							t.detachEvent("onload", a), t.setAttribute("onload", null), t.media = e
-					} t.addEventListener ?
-						t.addEventListener("load", a) : t.attachEvent && t.attachEvent("onload", a), setTimeout(function () {
-							t.rel = "stylesheet", t.media = "only x"
-						}), setTimeout(a, 3e3)
-				}, !o.support()) {
-				o.poly = function () {
-					if
-						(!n.document.getElementsByTagName) return; for (var t = n.document.getElementsByTagName("link"), e = 0; e <
-							t.length; e++) {
-						var a = t[e]; "preload" !== a.rel || "style" !== a.getAttribute("as") ||
-							a.getAttribute("data-loadcss") || (a.setAttribute("data-loadcss", !0), o.bindMediaToggle(a))
-					}
-				}, o.poly();
-				var t = n.setInterval(o.poly, 500); n.addEventListener ? n.addEventListener("load", function () {
-					o.poly(),
-						n.clearInterval(t)
-				}) : n.attachEvent && n.attachEvent("onload", function () {
-					o.poly(), n.clearInterval(t)
-				})
-			} "undefined" != typeof exports ? exports.loadCSS = loadCSS : n.loadCSS = loadCSS
-		}("undefined" != typeof
-			global ? global : this); </script>
-
-	<!-- Google Ads loaded lazily to reduce initial JavaScript -->
-	<script>
-		// Lazy load Google Ads after page is interactive
-		function loadGoogleAds() {
-			const script = document.createElement('script');
-			script.async = true;
-			script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
-			script.setAttribute('data-ad-client', 'ca-pub-5872969111929010');
-			document.head.appendChild(script);
-		}
-		// Load ads when browser is idle or after 4 seconds
-		if ('requestIdleCallback' in window) {
-			requestIdleCallback(loadGoogleAds, { timeout: 4000 });
-		} else {
-			setTimeout(loadGoogleAds, 4000);
-		}
-	</script>
-
-	<!-- Google Tag Manager - loaded asynchronously after critical content -->
-	<script>
-		// Delay GTM until page is interactive to reduce main-thread work
-		function loadGTM() {
-			(function (w, d, s, l, i) {
-				w[l] = w[l] || []; w[l].push({
-					'gtm.start': new Date().getTime(), event: 'gtm.js'
-				}); var f = d.getElementsByTagName(s)[0],
-					j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-						'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-			})(window, document, 'script', 'dataLayer', 'GTM-53587PK');
-		}
-		// Load GTM when browser is idle or after 3 seconds
-		if ('requestIdleCallback' in window) {
-			requestIdleCallback(loadGTM);
-		} else {
-			setTimeout(loadGTM, 3000);
-		}
-	</script>
-	<!-- End Google Tag Manager -->
-
-	<!-- Structured Data - Person Schema -->
-	<script type="application/ld+json">
-	{
-		"@context": "https://schema.org",
-		"@type": "Person",
-		"name": "Bishow Kaji Shrestha",
-		"alternateName": "Bishow Shrestha",
-		"jobTitle": "Senior Software Engineer",
-		"description": "Senior Software Engineer with 6+ years of experience in C#, ASP.NET Core, Angular, and SQL Server. Certified SAFe Practitioner and Scrum Master specializing in healthcare systems, Core Banking, and microservices architecture.",
-		"url": "https://bishowshrestha.com.np/",
-		"email": "aayambishow007@gmail.com",
-		"telephone": "+977-9843573229",
-		"address": {
-			"@type": "PostalAddress",
-			"addressLocality": "Kirtipur",
-			"addressRegion": "Kathmandu",
-			"addressCountry": "NP"
-		},
-		"nationality": {
-			"@type": "Country",
-			"name": "Nepal"
-		},
-		"workLocation": {
-			"@type": "Place",
-			"name": "Nepal"
-		},
-		"worksFor": {
-			"@type": "Organization",
-			"name": "Infinite Computer Solutions",
-			"address": {
-				"@type": "PostalAddress",
-				"addressCountry": "Nepal"
-			}
-		},
-		"knowsAbout": [
-			"C#",
-			".NET Core",
-			"ASP.NET Core",
-			"Angular",
-			"TypeScript",
-			"JavaScript",
-			"SQL Server",
-			"Oracle Database",
-			"PostgreSQL",
-			"Redis",
-			"Microservices Architecture",
-			"RESTful API",
-			"Healthcare HIPAA Compliance",
-			"Core Banking Systems",
-			"Agile Methodologies",
-			"Scrum",
-			"SAFe Framework",
-			"Identity Server",
-			"Elastic Search",
-			"RabbitMQ",
-			"Git",
-			"Jenkins",
-			"Full Stack Development"
-		],
-		"knowsLanguage": [
-			{
-				"@type": "Language",
-				"name": "English"
-			},
-			{
-				"@type": "Language",
-				"name": "Nepali"
-			}
-		],
-		"alumniOf": [
-			{
-				"@type": "EducationalOrganization",
-				"name": "MIT Australia",
-				"description": "Master of Information Technology (Ongoing)"
-			},
-			{
-				"@type": "EducationalOrganization",
-				"name": "Tribhuvan University",
-				"description": "Bachelor of Computer Application",
-				"endDate": "2021"
-			}
-		],
-		"hasCredential": [
-			{
-				"@type": "EducationalOccupationalCredential",
-				"credentialCategory": "Certification",
-				"name": "Certified SAFe Practitioner",
-				"dateCreated": "2024"
-			},
-			{
-				"@type": "EducationalOccupationalCredential",
-				"credentialCategory": "Certification",
-				"name": "Registered Scrum Master",
-				"dateCreated": "2021"
-			}
-		],
-		"hasOccupation": [
-			{
-				"@type": "Occupation",
-				"name": "Senior Software Engineer",
-				"occupationLocation": {
-					"@type": "Country",
-					"name": "Nepal"
-				},
-				"estimatedSalary": {
-					"@type": "MonetaryAmountDistribution",
-					"name": "Senior Software Engineer Salary",
-					"currency": "NPR"
-				},
-				"skills": "C#, .NET Core, ASP.NET Core, Angular, TypeScript, SQL Server, Microservices"
-			}
-		],
-		"award": [
-			"15+ Enterprise Projects Successfully Delivered",
-			"Team Leadership in Core Banking System Development",
-			"Healthcare HIPAA Compliance Implementation"
-		],
-		"contactPoint": {
-			"@type": "ContactPoint",
-			"telephone": "+977-9843573229",
-			"contactType": "Professional",
-			"email": "aayambishow007@gmail.com",
-			"availableLanguage": ["English", "Nepali"]
-		},
-		"sameAs": [
-			"https://bishowshrestha.com.np/",
-			"https://github.com/bishowshrestha",
-			"https://linkedin.com/in/bishowshrestha",
-			"https://twitter.com/bishowshrestha"
-		]
-	}
-	</script>
-
-	<!-- Structured Data - Website Schema -->
-	<script type="application/ld+json">
-	{
-		"@context": "https://schema.org",
-		"@type": "WebSite",
-		"name": "Bishow Shrestha Portfolio",
-		"alternateName": "Bishow Shrestha - Senior Software Engineer",
-		"url": "https://bishowshrestha.com.np/",
-		"description": "Professional portfolio showcasing software development projects, skills, and experience of Bishow Shrestha - Senior Software Engineer specializing in .NET Core, Angular, and enterprise applications.",
-		"inLanguage": "en-US",
-		"author": {
-			"@type": "Person",
-			"name": "Bishow Kaji Shrestha",
-			"url": "https://bishowshrestha.com.np/"
-		},
-		"creator": {
-			"@type": "Person",
-			"name": "Bishow Kaji Shrestha"
-		},
-		"publisher": {
-			"@type": "Person",
-			"name": "Bishow Kaji Shrestha"
-		}
-	}
-	</script>
-
-	<!-- Structured Data - Professional Service Schema -->
-	<script type="application/ld+json">
-	{
-		"@context": "https://schema.org",
-		"@type": "ProfessionalService",
-		"name": "Bishow Shrestha - Software Development Services",
-		"description": "Professional software development services specializing in .NET Core, Angular, microservices architecture, and enterprise application development.",
-		"url": "https://bishowshrestha.com.np/",
-		"areaServed": {
-			"@type": "Country",
-			"name": "Nepal"
-		},
-		"provider": {
-			"@type": "Person",
-			"name": "Bishow Kaji Shrestha",
-			"jobTitle": "Senior Software Engineer"
-		},
-		"serviceType": [
-			"Full Stack Web Development",
-			"Frontend Development with Angular",
-			"Backend Development with .NET Core",
-			"Database Design and Optimization",
-			"Microservices Architecture",
-			"Mobile App Development",
-			"Agile Project Management",
-			"Technical Consulting"
-		],
-		"priceRange": "$$"
-	}
-	</script>
-</head>
-
-<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300" itemscope
-	itemtype="https://schema.org/WebPage">
-
-	<header>
-		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target"
-			id="ftco-navbar" role="navigation" aria-label="Main Navigation">
-			<div class="container">
-				<a class="navbar-brand" href="#home-section" aria-label="Bishow Shrestha Home"><span>B</span>ishow</a>
-				<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
-					data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false"
-					aria-label="Toggle navigation menu">
-					<span class="oi oi-menu" aria-hidden="true"></span> Menu
-				</button>
-
-				<div class="collapse navbar-collapse" id="ftco-nav">
-					<ul class="navbar-nav nav ml-auto">
-
-						<li class="nav-item"><a href="#home-section" class="nav-link"
-								aria-label="Navigate to Home"><span>Home</span></a></li>
-						<li class="nav-item"><a href="#about-section" class="nav-link"
-								aria-label="Navigate to About"><span>About</span></a></li>
-						<li class="nav-item"><a href="#resume-section" class="nav-link"
-								aria-label="Navigate to Resume"><span>Resume</span></a></li>
-						<li class="nav-item"><a href="#tools-section" class="nav-link"
-								aria-label="Navigate to Tools"><span>Tools</span></a></li>
-						<li class="nav-item"><a href="#services-section" class="nav-link"
-								aria-label="Navigate to Services"><span>Services</span></a></li>
-						<li class="nav-item"><a href="#projects-section" class="nav-link"
-								aria-label="Navigate to Projects"><span>Projects</span></a></li>
-						<li class="nav-item"><a href="#contact-section" class="nav-link"
-								aria-label="Navigate to Contact"><span>Contact</span></a></li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-	</header>
-
-	<main>
-		<section class="hero-wrap js-fullheight" id="home-section" role="banner">
-			<div class="overlay"></div>
-			<div class="container">
-				<div class="row no-gutters slider-text js-fullheight justify-content-center align-items-center">
-					<div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-center">
-						<div class="text text-center">
-							<p class="subheading">Hey! I am</p>
-							<h1 itemprop="name">Bishow Shrestha</h1>
-							<h2 itemprop="jobTitle">I'm a
-								<span class="typing-text"></span>
-							</h2>
-							<p class="mt-4 hero-tagline">
-								Senior Software Engineer specializing in .NET Core, ASP.NET Core, Angular, and
-								enterprise application development.
-								Certified SAFe Practitioner with 6+ years of experience building scalable solutions for
-								healthcare, banking, and e-commerce industries.
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="mouse">
-				<a href="#about-section" class="mouse-icon" aria-label="Scroll down to about section">
-					<div class="mouse-wheel"><span class="ion-ios-arrow-round-down" aria-hidden="true"></span></div>
-				</a>
-			</div>
-		</section>
-
-		<section class="ftco-about img ftco-section ftco-no-pt ftco-no-pb" id="about-section">
-			<div class="container">
-				<div class="row d-flex no-gutters">
-					<div class="col-md-6 col-lg-6 d-flex">
-						<div class="img-about img d-flex align-items-stretch">
-							<div class="overlay"></div>
-							<div class="img d-flex align-self-stretch align-items-center bg-about">
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6 col-lg-6 pl-md-5 py-5">
-						<div class="row justify-content-start pb-3">
-							<div class="col-md-12 heading-section ftco-animate">
-								<div class="big" aria-hidden="true">About</div>
-								<h2 class="mb-4">About Me</h2>
-								<p>Hi, I'm Bishow Kaji Shrestha, a Senior Software Engineer with 6+ years of experience
-									in full-stack development and team leadership. I specialize in C#, ASP.NET Core,
-									Angular, and SQL Server. I'm a Certified SAFe® Practitioner and Registered Scrum
-									Master with expertise in healthcare systems (HIPAA compliance), Core Banking
-									Systems, and agro-related CMS. I have a proven track record of delivering projects
-									successfully in Agile environments and mentoring teams.</p>
-								<ul class="about-info mt-4 px-md-0 px-2">
-									<li class="d-flex"><span>Name:</span> <span>Bishow Kaji Shrestha</span></li>
-									<li class="d-flex"><span>Title:</span> <span>Senior Software Engineer</span></li>
-									<li class="d-flex"><span>Experience:</span> <span>6+ Years</span></li>
-									<li class="d-flex"><span>Email:</span> <span>aayambishow007@gmail.com</span></li>
-									<li class="d-flex"><span>Phone: </span> <span>9843573229</span></li>
-									<li class="d-flex"><span>Certifications:</span> <span>SAFe® Practitioner, Scrum
-											Master</span></li>
-								</ul>
-							</div>
-						</div>
-						<div class="counter-wrap ftco-animate d-flex mt-md-3">
-							<div class="text">
-								<p class="mb-4">
-									<span class="number" data-number="15">0</span>
-									<span>Projects Delivered</span>
-								</p>
-								<p><a href="bishow.pdf" class="btn btn-primary py-3 px-3">Download CV</a></p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section class="ftco-section ftco-partner">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm ftco-animate">
-						<a href="#" class="partner"><img src="images/partner-1.png" width="150" height="50"
-								loading="lazy" class="img-fluid" alt="Technology Partner Logo 1"></a>
-					</div>
-					<div class="col-sm ftco-animate">
-						<a href="#" class="partner"><img src="images/partner-2.png" width="150" height="50"
-								loading="lazy" class="img-fluid" alt="Technology Partner Logo 2"></a>
-					</div>
-					<div class="col-sm ftco-animate">
-						<a href="#" class="partner"><img src="images/partner-3.png" width="150" height="50"
-								loading="lazy" class="img-fluid" alt="Technology Partner Logo 3"></a>
-					</div>
-					<div class="col-sm ftco-animate">
-						<a href="#" class="partner"><img src="images/partner-4.png" width="150" height="50"
-								loading="lazy" class="img-fluid" alt="Technology Partner Logo 4"></a>
-					</div>
-					<div class="col-sm ftco-animate">
-						<a href="#" class="partner"><img src="images/partner-5.png" width="150" height="50"
-								loading="lazy" class="img-fluid" alt="Technology Partner Logo 5"></a>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm ftco-animate">
-						<a href="#" class="partner"><img src="images/partner-6.png" width="150" height="50"
-								loading="lazy" class="img-fluid" alt="Technology Partner Logo 6"></a>
-					</div>
-					<div class="col-sm ftco-animate">
-						<a href="#" class="partner"><img src="images/partner-7.png" width="150" height="50"
-								loading="lazy" class="img-fluid" alt="Technology Partner Logo 7"></a>
-					</div>
-					<div class="col-sm ftco-animate">
-						<a href="#" class="partner"><img src="images/partner-8.png" width="150" height="50"
-								loading="lazy" class="img-fluid" alt="Technology Partner Logo 8"></a>
-					</div>
-					<div class="col-sm ftco-animate">
-						<a href="#" class="partner"><img src="images/partner-9.png" width="150" height="50"
-								loading="lazy" class="img-fluid" alt="Technology Partner Logo 9"></a>
-					</div>
-					<div class="col-sm ftco-animate">
-						<a href="#" class="partner"><img src="images/partner-10.png" width="150" height="50"
-								loading="lazy" class="img-fluid" alt="Technology Partner Logo 10"></a>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- Developer Tools Section -->
-		<section class="ftco-section" id="tools-section">
-			<div class="container">
-				<div class="row justify-content-center mb-5 pb-5">
-					<div class="col-md-7 heading-section text-center ftco-animate">
-						<div class="big big-2" aria-hidden="true">Tools</div>
-						<h2 class="mb-4">Developer Tools & Utilities</h2>
-						<p>Useful web development tools built by Bishow Shrestha for developers. Free online utilities
-							for JSON formatting, Base64 encoding, text manipulation, and more.</p>
-					</div>
-				</div>
-				<div class="row">
-					<!-- JSON Formatter -->
-					<div class="col-md-6 col-lg-4 ftco-animate">
-						<div class="tool-card">
-							<div class="tool-icon">
-								<span class="icon-code"></span>
-							</div>
-							<h3>JSON Formatter</h3>
-							<p>Format and validate JSON data with syntax highlighting</p>
-							<textarea id="jsonInput" class="tool-input" placeholder='Enter JSON here...'></textarea>
-							<button onclick="formatJSON()" class="btn btn-primary mt-2">Format JSON</button>
-							<button onclick="minifyJSON()" class="btn btn-secondary mt-2">Minify</button>
-							<pre id="jsonOutput" class="tool-output"></pre>
-						</div>
-					</div>
-
-					<!-- Base64 Encoder/Decoder -->
-					<div class="col-md-6 col-lg-4 ftco-animate">
-						<div class="tool-card">
-							<div class="tool-icon">
-								<span class="icon-lock"></span>
-							</div>
-							<h3>Base64 Encoder/Decoder</h3>
-							<p>Encode or decode Base64 strings</p>
-							<textarea id="base64Input" class="tool-input" placeholder="Enter text here..."></textarea>
-							<button onclick="encodeBase64()" class="btn btn-primary mt-2">Encode</button>
-							<button onclick="decodeBase64()" class="btn btn-secondary mt-2">Decode</button>
-							<pre id="base64Output" class="tool-output"></pre>
-						</div>
-					</div>
-
-					<!-- Color Picker -->
-					<div class="col-md-6 col-lg-4 ftco-animate">
-						<div class="tool-card">
-							<div class="tool-icon">
-								<span class="icon-paint-brush"></span>
-							</div>
-							<h3>Color Picker</h3>
-							<p>Get HEX, RGB, and HSL values</p>
-							<input type="color" id="colorPicker" class="tool-color-input" value="#667eea">
-							<div id="colorValues" class="tool-output mt-3">
-								<p><strong>HEX:</strong> <span id="hexValue">#667eea</span></p>
-								<p><strong>RGB:</strong> <span id="rgbValue">rgb(102, 126, 234)</span></p>
-								<p><strong>HSL:</strong> <span id="hslValue">hsl(229, 75%, 66%)</span></p>
-							</div>
-						</div>
-					</div>
-
-					<!-- Password Generator -->
-					<div class="col-md-6 col-lg-4 ftco-animate">
-						<div class="tool-card">
-							<div class="tool-icon">
-								<span class="icon-shield"></span>
-							</div>
-							<h3>Password Generator</h3>
-							<p>Generate secure random passwords</p>
-							<div class="form-group">
-								<label>Length: <span id="passLength">16</span></label>
-								<input type="range" id="passwordLength" min="8" max="32" value="16"
-									class="form-control-range" onchange="updatePassLength()">
-							</div>
-							<div class="form-check">
-								<input type="checkbox" id="includeNumbers" checked class="form-check-input">
-								<label class="form-check-label">Include Numbers</label>
-							</div>
-							<div class="form-check">
-								<input type="checkbox" id="includeSymbols" checked class="form-check-input">
-								<label class="form-check-label">Include Symbols</label>
-							</div>
-							<button onclick="generatePassword()" class="btn btn-primary mt-2">Generate</button>
-							<div class="tool-output mt-2">
-								<input type="text" id="generatedPassword" class="form-control" readonly>
-								<button onclick="copyPassword()" class="btn btn-secondary mt-2">Copy</button>
-							</div>
-						</div>
-					</div>
-
-					<!-- Lorem Ipsum Generator -->
-					<div class="col-md-6 col-lg-4 ftco-animate">
-						<div class="tool-card">
-							<div class="tool-icon">
-								<span class="icon-file-text"></span>
-							</div>
-							<h3>Lorem Ipsum Generator</h3>
-							<p>Generate placeholder text</p>
-							<div class="form-group">
-								<label>Paragraphs:</label>
-								<input type="number" id="paragraphCount" min="1" max="10" value="3"
-									class="form-control">
-							</div>
-							<button onclick="generateLorem()" class="btn btn-primary mt-2">Generate</button>
-							<pre id="loremOutput" class="tool-output"></pre>
-						</div>
-					</div>
-
-					<!-- URL Encoder/Decoder -->
-					<div class="col-md-6 col-lg-4 ftco-animate">
-						<div class="tool-card">
-							<div class="tool-icon">
-								<span class="icon-link"></span>
-							</div>
-							<h3>URL Encoder/Decoder</h3>
-							<p>Encode or decode URL strings</p>
-							<textarea id="urlInput" class="tool-input" placeholder="Enter URL here..."></textarea>
-							<button onclick="encodeURL()" class="btn btn-primary mt-2">Encode</button>
-							<button onclick="decodeURL()" class="btn btn-secondary mt-2">Decode</button>
-							<pre id="urlOutput" class="tool-output"></pre>
-						</div>
-					</div>
-
-					<!-- Timestamp Converter -->
-					<div class="col-md-6 col-lg-4 ftco-animate">
-						<div class="tool-card">
-							<div class="tool-icon">
-								<span class="icon-clock"></span>
-							</div>
-							<h3>Timestamp Converter</h3>
-							<p>Convert Unix timestamp to date</p>
-							<input type="number" id="timestampInput" class="form-control"
-								placeholder="Enter Unix timestamp">
-							<button onclick="convertTimestamp()" class="btn btn-primary mt-2">Convert</button>
-							<button onclick="getCurrentTimestamp()" class="btn btn-secondary mt-2">Current Time</button>
-							<div id="timestampOutput" class="tool-output"></div>
-						</div>
-					</div>
-
-					<!-- Text Case Converter -->
-					<div class="col-md-6 col-lg-4 ftco-animate">
-						<div class="tool-card">
-							<div class="tool-icon">
-								<span class="icon-type"></span>
-							</div>
-							<h3>Text Case Converter</h3>
-							<p>Convert text to different cases</p>
-							<textarea id="caseInput" class="tool-input" placeholder="Enter text here..."></textarea>
-							<button onclick="convertCase('upper')"
-								class="btn btn-primary btn-sm mt-2">UPPERCASE</button>
-							<button onclick="convertCase('lower')"
-								class="btn btn-primary btn-sm mt-2">lowercase</button>
-							<button onclick="convertCase('title')" class="btn btn-primary btn-sm mt-2">Title
-								Case</button>
-							<button onclick="convertCase('camel')"
-								class="btn btn-primary btn-sm mt-2">camelCase</button>
-							<pre id="caseOutput" class="tool-output"></pre>
-						</div>
-					</div>
-
-					<!-- UUID Generator -->
-					<div class="col-md-6 col-lg-4 ftco-animate">
-						<div class="tool-card">
-							<div class="tool-icon">
-								<span class="icon-hash"></span>
-							</div>
-							<h3>UUID Generator</h3>
-							<p>Generate unique identifiers</p>
-							<button onclick="generateUUID()" class="btn btn-primary mt-2">Generate UUID</button>
-							<div class="tool-output mt-2">
-								<input type="text" id="uuidOutput" class="form-control" readonly>
-								<button onclick="copyUUID()" class="btn btn-secondary mt-2">Copy</button>
-							</div>
-						</div>
-					</div>
-
-				</div>
-			</div>
-		</section>
-
-		<section class="ftco-section ftco-no-pb goto-here" id="resume-section">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-3">
-						<nav id="navi">
-							<ul>
-								<li><a href="#page-1">Education</a></li>
-								<li><a href="#page-2">Experience</a></li>
-								<li><a href="#page-3">Skills</a></li>
-							</ul>
-						</nav>
-					</div>
-					<div class="col-md-9">
-						<div id="page-1" class="page one">
-							<h2 class="heading">Education</h2>
-							<div class="resume-wrap d-flex ftco-animate">
-								<div class="icon d-flex align-items-center justify-content-center">
-									<span class="flaticon-ideas"></span>
-								</div>
-								<div class="text pl-3">
-									<span class="date">Ongoing</span>
-									<h2>Master of Information Technology (MIT)</h2>
-									<span class="position">Tribhuvan University</span>
-								</div>
-							</div>
-							<div class="resume-wrap d-flex ftco-animate">
-								<div class="icon d-flex align-items-center justify-content-center">
-									<span class="flaticon-ideas"></span>
-								</div>
-								<div class="text pl-3">
-									<span class="date">2021</span>
-									<h2>Bachelor of Computer Application</h2>
-									<span class="position">Kantipur City College<br />Purbanchal University</span>
-								</div>
-							</div>
-							<div class="resume-wrap d-flex ftco-animate">
-								<div class="icon d-flex align-items-center justify-content-center">
-									<span class="flaticon-ideas"></span>
-								</div>
-								<div class="text pl-3">
-									<span class="date">2014</span>
-									<h2>Higher Secondary Education (+2 Science)</h2>
-									<span class="position">Sarbamangala Higher Secondary School<br />HSEB Board</span>
-								</div>
-							</div>
-							<div class="resume-wrap d-flex ftco-animate">
-								<div class="icon d-flex align-items-center justify-content-center">
-									<span class="flaticon-ideas"></span>
-								</div>
-								<div class="text pl-3">
-									<span class="date">2012</span>
-									<h2>SLC (School Leaving Certificate)</h2>
-									<span class="position">Saraswati Shiksha Griha<br />Nepal Government</span>
-									<h2 class="heading">Experience</h2>
-									<div class="resume-wrap d-flex ftco-animate">
-										<div class="icon d-flex align-items-center justify-content-center">
-											<span class="flaticon-ideas"></span>
-										</div>
-										<div class="text pl-3">
-											<span class="date">Feb 2024 - Present</span>
-											<h2>Senior Software Engineer</h2>
-											<span class="position">Infinite Computer Solutions</span>
-											<p>Developing insurance management systems under HIPAA compliance using
-												.NET, Angular, Oracle, and SQL Server. Integrated OCR functionality and
-												optimized code performance.</p>
-										</div>
-									</div>
-									<div class="resume-wrap d-flex ftco-animate">
-										<div class="icon d-flex align-items-center justify-content-center">
-											<span class="flaticon-ideas"></span>
-										</div>
-										<div class="text pl-3">
-											<span class="date">Jan 2023 - Feb 2024</span>
-											<h2>Software Engineer II</h2>
-											<span class="position">Cotiviti Nepal</span>
-											<p>Worked on U.S.-based healthcare management systems with focus on HIPAA
-												compliance and system optimization.</p>
-										</div>
-									</div>
-									<div class="resume-wrap d-flex ftco-animate">
-										<div class="icon d-flex align-items-center justify-content-center">
-											<span class="flaticon-ideas"></span>
-										</div>
-										<div class="text pl-3">
-											<span class="date">Oct 2021 - Jan 2023</span>
-											<h2>Associate Team Lead</h2>
-											<span class="position">InfoDevelopers Pvt. Ltd.</span>
-											<p>Led Core Banking System (CBS) development using .NET Core 3.1
-												microservices architecture. Managed teams and implemented Identity
-												Server for authentication.</p>
-										</div>
-									</div>
-									<div class="resume-wrap d-flex ftco-animate">
-										<div class="icon d-flex align-items-center justify-content-center">
-											<span class="flaticon-ideas"></span>
-										</div>
-										<div class="text pl-3">
-											<span class="date">Dec 2020 - Oct 2021</span>
-											<h2>Sr. Software Engineer</h2>
-											<span class="position">InfoDevelopers Pvt. Ltd.</span>
-											<p>Developed reporting solutions using Telerik Reporting and optimized
-												database performance for government projects.</p>
-										</div>
-									</div>
-									<div class="resume-wrap d-flex ftco-animate">
-										<div class="icon d-flex align-items-center justify-content-center">
-											<span class="flaticon-ideas"></span>
-										</div>
-										<div class="text pl-3">
-											<span class="date">Mar 2020 - Dec 2020</span>
-											<h2>Software Developer</h2>
-											<span class="position">InfoDevelopers Pvt. Ltd.</span>
-											<p>Worked on government Core Banking System modules and database
-												optimization.</p>
-										</div>
-									</div>
-									<div class="resume-wrap d-flex ftco-animate">
-										<div class="icon d-flex align-items-center justify-content-center">
-											<span class="flaticon-ideas"></span>
-										</div>
-										<div class="text pl-3">
-											<span class="date">Dec 2019 - Feb 2020</span>
-											<h2>Junior .NET Developer</h2>
-											<span class="position">BitsPanda Technology</span>
-											<p>Developed and maintained agro-related CMS with third-party API
-												integrations.</p>
-										</div>
-									</div>
-									<div id="page-3" class="page three">
-										<h2 class="heading">Skills</h2>
-										<div class="row">
-											<div class="col-md-12">
-												<div class="mb-4">
-													<h3 class="h5 mb-3">Languages & Frameworks</h3>
-													<div class="d-flex flex-wrap gap-2">
-														<span class="badge badge-primary px-3 py-2 mb-2 mr-2">C#</span>
-														<span class="badge badge-primary px-3 py-2 mb-2 mr-2">.NET
-															Core</span>
-														<span class="badge badge-primary px-3 py-2 mb-2 mr-2">ASP.NET
-															Core</span>
-														<span
-															class="badge badge-primary px-3 py-2 mb-2 mr-2">Angular</span>
-														<span
-															class="badge badge-primary px-3 py-2 mb-2 mr-2">TypeScript</span>
-														<span
-															class="badge badge-primary px-3 py-2 mb-2 mr-2">jQuery</span>
-														<span
-															class="badge badge-primary px-3 py-2 mb-2 mr-2">HTML5</span>
-														<span
-															class="badge badge-primary px-3 py-2 mb-2 mr-2">CSS3</span>
-													</div>
-												</div>
-												<div class="mb-4">
-													<h3 class="h5 mb-3">Databases</h3>
-													<div class="d-flex flex-wrap gap-2">
-														<span class="badge badge-info px-3 py-2 mb-2 mr-2">SQL
-															Server</span>
-														<span class="badge badge-info px-3 py-2 mb-2 mr-2">Oracle</span>
-														<span
-															class="badge badge-info px-3 py-2 mb-2 mr-2">PostgreSQL</span>
-														<span class="badge badge-info px-3 py-2 mb-2 mr-2">Redis</span>
-													</div>
-												</div>
-												<div class="mb-4">
-													<h3 class="h5 mb-3">Domain Expertise</h3>
-													<div class="d-flex flex-wrap gap-2">
-														<span class="badge badge-success px-3 py-2 mb-2 mr-2">Healthcare
-															(HIPAA)</span>
-														<span class="badge badge-success px-3 py-2 mb-2 mr-2">Core
-															Banking System</span>
-														<span class="badge badge-success px-3 py-2 mb-2 mr-2">Agro
-															Management</span>
-														<span
-															class="badge badge-success px-3 py-2 mb-2 mr-2">Insurance</span>
-													</div>
-												</div>
-												<div class="mb-4">
-													<h3 class="h5 mb-3">Methodologies & Architecture</h3>
-													<div class="d-flex flex-wrap gap-2">
-														<span
-															class="badge badge-warning px-3 py-2 mb-2 mr-2">Agile/Scrum</span>
-														<span
-															class="badge badge-warning px-3 py-2 mb-2 mr-2">SAFe</span>
-														<span
-															class="badge badge-warning px-3 py-2 mb-2 mr-2">Microservices</span>
-														<span class="badge badge-warning px-3 py-2 mb-2 mr-2">RESTful
-															API</span>
-													</div>
-												</div>
-												<div class="mb-4">
-													<h3 class="h5 mb-3">Tools & Technologies</h3>
-													<div class="d-flex flex-wrap gap-2">
-														<span
-															class="badge badge-secondary px-3 py-2 mb-2 mr-2">Git</span>
-														<span
-															class="badge badge-secondary px-3 py-2 mb-2 mr-2">JIRA</span>
-														<span
-															class="badge badge-secondary px-3 py-2 mb-2 mr-2">Jenkins</span>
-														<span
-															class="badge badge-secondary px-3 py-2 mb-2 mr-2">Bitbucket</span>
-														<span
-															class="badge badge-secondary px-3 py-2 mb-2 mr-2">Bamboo</span>
-														<span class="badge badge-secondary px-3 py-2 mb-2 mr-2">Octopus
-															Deploy</span>
-														<span class="badge badge-secondary px-3 py-2 mb-2 mr-2">Telerik
-															Reporting</span>
-													</div>
-												</div>
-												<div class="mb-4">
-													<h3 class="h5 mb-3">Specialized Skills</h3>
-													<div class="d-flex flex-wrap gap-2">
-														<span class="badge badge-danger px-3 py-2 mb-2 mr-2">OCR</span>
-														<span class="badge badge-danger px-3 py-2 mb-2 mr-2">Identity
-															Server</span>
-														<span class="badge badge-danger px-3 py-2 mb-2 mr-2">Elastic
-															Search</span>
-														<span
-															class="badge badge-danger px-3 py-2 mb-2 mr-2">RabbitMQ</span>
-														<span
-															class="badge badge-danger px-3 py-2 mb-2 mr-2">SignalR</span>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-		</section>
-
-		<section class="ftco-section" id="services-section">
-			<div class="container-fluid px-md-5">
-				<div class="row justify-content-center py-5 mt-5">
-					<div class="col-md-12 heading-section text-center ftco-animate">
-						<div class="big big-2" aria-hidden="true">Services</div>
-						<h2 class="mb-4">Professional Software Development Services</h2>
-						<p>Bishow Shrestha offers comprehensive software development services with expertise in .NET
-							Core, Angular, and full-stack web development. With over 6 years of experience delivering
-							enterprise solutions across healthcare, banking, and e-commerce domains.</p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<a href="#" class="services-1 shadow">
-							<span class="icon">
-								<i class="flaticon-analysis"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-3">Web Design & UI/UX</h3>
-								<p>Modern, responsive web design using HTML5, CSS3, and Bootstrap. Creating
-									user-friendly interfaces with focus on accessibility and performance optimization.
-								</p>
-							</div>
-						</a>
-					</div>
-
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<a href="#" class="services-1 shadow">
-							<span class="icon">
-								<i class="flaticon-ideas"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-3">Full Stack Web Development</h3>
-								<p>Enterprise web application development using .NET Core, ASP.NET Core, and Angular.
-									Specializing in microservices architecture, RESTful APIs, and scalable backend
-									solutions.</p>
-							</div>
-						</a>
-					</div>
-
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<a href="#" class="services-1 shadow">
-							<span class="icon">
-								<i class="flaticon-innovation"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-3">Mobile App Development</h3>
-								<p>Cross-platform mobile application development with native performance. Experience in
-									building Android apps for agriculture, e-commerce, and financial sectors.</p>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<a href="#" class="services-1 shadow">
-							<span class="icon">
-								<i class="flaticon-ux-design"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-3">Database Design & Optimization</h3>
-								<p>Database architecture and performance tuning for SQL Server, Oracle, and PostgreSQL.
-									Expertise in complex queries, stored procedures, and data migration strategies.</p>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<a href="#" class="services-1 shadow">
-							<span class="icon">
-								<i class="flaticon-idea"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-3">Agile Project Management</h3>
-								<p>Certified Scrum Master and SAFe Practitioner offering agile project management, team
-									leadership, and sprint planning. Experience managing distributed teams and
-									delivering complex enterprise projects.</p>
-
-							</div>
-						</a>
-					</div>
-				</div>
-			</div>
-		</section>
-
-
-		<section class="ftco-section ftco-project" id="projects-section">
-			<div class="container-fluid px-md-0">
-				<div class="row no-gutters justify-content-center pb-5">
-					<div class="col-md-12 heading-section text-center ftco-animate">
-						<div class="big big-2" aria-hidden="true">Projects</div>
-						<h2 class="mb-4">Portfolio of Successfully Delivered Projects</h2>
-						<p>Bishow Shrestha has delivered 15+ enterprise projects across healthcare, banking, e-commerce,
-							and agriculture domains. Experience in building scalable .NET Core applications, Angular
-							SPAs, and mobile solutions serving thousands of users.</p>
-					</div>
-				</div>
-				<div class="row no-gutters">
-					<div class="col-md-4">
-						<div
-							class="project img ftco-animate d-flex justify-content-center align-items-center bg-work-1">
-							<div class="overlay"></div>
-							<div class="text text-center p-4">
-								<h3><a href="https://www.meropet.com/">Mero Pet</a></h3>
-								<span>An Advanced Concept In Absolute Pet Care</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div
-							class="project img ftco-animate d-flex justify-content-center align-items-center bg-work-2">
-							<div class="overlay"></div>
-							<div class="text text-center p-4">
-								<h3><a href="http://egtkt.com/">EgTkt</a></h3>
-								<span>Find bus deals</span>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-4">
-						<div
-							class="project img ftco-animate d-flex justify-content-center align-items-center bg-work-3">
-							<div class="overlay"></div>
-							<div class="text text-center p-4">
-								<h3><a href="https://www.sagarmathadigital.com/">Sagarmatha Digital</a></h3>
-								<span>Music production and distribution company.</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div
-							class="project img ftco-animate d-flex justify-content-center align-items-center bg-work-4">
-							<div class="overlay"></div>
-							<div class="text text-center p-4">
-								<h3><a
-										href="https://play.google.com/store/apps/details?id=com.bitspanda.nepfresh&hl=en_US">Nepfresh</a>
-								</h3>
-								<span> E-commence application where customers can shop organic items.</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div
-							class="project img ftco-animate d-flex justify-content-center align-items-center bg-work-5">
-							<div class="overlay"></div>
-							<div class="text text-center p-4">
-								<h3><a
-										href="https://play.google.com/store/apps/details?id=com.bitspanda.atmbook&hl=en_US">Atmbook</a>
-								</h3>
-								<span>This app will show you partner bank who will offer you free service and other bank
-									too who will take how much charges in each transactions</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div
-							class="project img ftco-animate d-flex justify-content-center align-items-center bg-work-6">
-							<div class="overlay"></div>
-							<div class="text text-center p-4">
-								<h3><a href="https://nlk.org.np/">नागरिक लगानी कोष</a></h3>
-								<span>"नेपालको समृद्धिको सहयात्री"</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
-			<div class="container-fluid px-md-5">
-				<div class="row d-md-flex align-items-center">
-
-					<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-						<div class="block-18 shadow">
-							<div class="text">
-								<strong class="number" data-number="6">0</strong>
-								<span>Complete Projects</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-						<div class="block-18 shadow">
-							<div class="text">
-								<strong class="number" data-number="12">0</strong>
-								<span>Happy Customers</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-						<div class="block-18 shadow">
-							<div class="text">
-								<strong class="number" data-number="500">0</strong>
-								<span>Cups of coffee</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-
-		<section class="ftco-section ftco-hireme img bg-hire">
-			<div class="overlay"></div>
-			<div class="container">
-				<div class="row justify-content-center">
-					<div class="col-md-7 ftco-animate text-center">
-						<h2>I'm <span>Available</span> for freelancing</h2>
-						<p class="mb-0"><a href="#" class="btn btn-primary py-3 px-5">Hire me</a></p>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section class="ftco-section contact-section ftco-no-pb" id="contact-section">
-			<div class="container">
-				<div class="row justify-content-center mb-5 pb-3">
-					<div class="col-md-7 heading-section text-center ftco-animate">
-						<div class="big big-2" aria-hidden="true">Contact</div>
-						<h2 class="mb-4">Contact Me</h2>
-					</div>
-				</div>
-
-				<div class="row d-flex contact-info mb-5">
-					<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-						<div class="align-self-stretch box text-center p-4 shadow">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="icon-map-signs"></span>
-							</div>
-							<div>
-								<h3 class="mb-4">Address</h3>
-								<p>Maitrinagar-2,Buddha Chowk</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-						<div class="align-self-stretch box text-center p-4 shadow">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="icon-phone2"></span>
-							</div>
-							<div>
-								<h3 class="mb-4">Contact Number</h3>
-								<p><a href="tel://9843573229">+ 9779843573229</a></p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-						<div class="align-self-stretch box text-center p-4 shadow">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="icon-paper-plane"></span>
-							</div>
-							<div>
-								<h3 class="mb-4">Email Address</h3>
-								<p><a href="mailto:aayambishow007@gmail.com">aayambishow007</a></p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-						<div class="align-self-stretch box text-center p-4 shadow">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="icon-globe"></span>
-							</div>
-							<div>
-								<h3 class="mb-4">Website</h3>
-								<p><a href="https://bishowshrestha.com.np/">bishowshrestha.com.np</a></p>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="row no-gutters block-9">
-					<div class="col-md-6 order-md-last d-flex">
-						<form name="contact" class="bg-light p-4 p-md-5 contact-form" method="POST"
-							netlify-honeypot="bot-field" data-netlify="true">
-							<div class="form-group">
-								<input type="text" name="name" id="name" placeholder="Name" required
-									class="form-control">
-							</div>
-							<div class="form-group">
-								<input type="email" name="email" id="email" required class="form-control"
-									placeholder="Your Email">
-							</div>
-							<div class="form-group">
-								<input type="text" name="subject" id="subject" class="form-control"
-									placeholder="Subject">
-							</div>
-							<div class="form-group">
-								<textarea name="message" id="message" cols="30" rows="7" class="form-control"
-									placeholder="Message"></textarea>
-							</div>
-							<div class="form-group actions">
-
-								<button type="submit" class="btn btn-primary py-3 px-5">Send</button>
-
-							</div>
-
-						</form>
-
-					</div>
-
-					<div class="col-md-6 d-flex">
-						<div class="img bg-contact-img"></div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-	</main>
-
-	<footer class="ftco-footer ftco-section" role="contentinfo" itemscope itemtype="https://schema.org/WPFooter">
-		<div class="container">
-			<div class="row mb-5">
-				<div class="col-md">
-					<div class="ftco-footer-widget mb-4">
-						<h2 class="ftco-heading-2">About</h2>
-						<p itemprop="description">Hi I'm Bishow Shrestha, a web developer from Nepal. I'm very familiar
-							with Microsoft .NET CORE framework, modern client-side frameworks and SQL databases. I've
-							built numerous web applications and websites.</p>
-						<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5"
-							aria-label="Social Media Links">
-							<li class="ftco-animate"><a href="https://twitter.com/Aayam_world10"
-									rel="noopener noreferrer" target="_blank" aria-label="Follow on Twitter"><span
-										class="icon-twitter" aria-hidden="true"></span></a></li>
-							<li class="ftco-animate"><a href="https://www.facebook.com/aayam007"
-									rel="noopener noreferrer" target="_blank" aria-label="Follow on Facebook"><span
-										class="icon-facebook" aria-hidden="true"></span></a></li>
-							<li class="ftco-animate"><a href="https://github.com/Aayam007" rel="noopener noreferrer"
-									target="_blank" aria-label="View GitHub Profile"><span class="icon-github"
-										aria-hidden="true"></span></a></li>
-							<li class="ftco-animate"><a href="https://www.linkedin.com/in/aayam007"
-									rel="noopener noreferrer" target="_blank" aria-label="Connect on LinkedIn"><span
-										class="icon-linkedin" aria-hidden="true"></span></a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-md">
-					<div class="ftco-footer-widget mb-4 ml-md-4">
-						<h2 class="ftco-heading-2">Quick Links</h2>
-						<nav aria-label="Footer Navigation">
-							<ul class="list-unstyled">
-								<li><a href="#home-section" aria-label="Go to Home"><span
-											class="icon-long-arrow-right mr-2" aria-hidden="true"></span>Home</a></li>
-								<li><a href="#about-section" aria-label="Go to About"><span
-											class="icon-long-arrow-right mr-2" aria-hidden="true"></span>About</a></li>
-								<li><a href="#services-section" aria-label="Go to Services"><span
-											class="icon-long-arrow-right mr-2" aria-hidden="true"></span>Services</a>
-								</li>
-								<li><a href="#projects-section" aria-label="Go to Projects"><span
-											class="icon-long-arrow-right mr-2" aria-hidden="true"></span>Projects</a>
-								</li>
-								<li><a href="#contact-section" aria-label="Go to Contact"><span
-											class="icon-long-arrow-right mr-2" aria-hidden="true"></span>Contact</a>
-								</li>
-							</ul>
-						</nav>
-					</div>
-				</div>
-				<!--<div class="col-md">
-     <div class="ftco-footer-widget mb-4">
-						<h2 class="ftco-heading-2">Contact Information</h2>
-						<address class="block-23 mb-3" itemprop="address" itemscope
-							itemtype="https://schema.org/PostalAddress">
-							<ul>
-								<li><span class="icon icon-map-marker" aria-hidden="true"></span><span class="text"
-										itemprop="streetAddress">Maitrinagar-02, Kalanki, <span
-											itemprop="addressLocality">Kathmandu</span>, <span
-											itemprop="addressCountry">Nepal</span></span></li>
-								<li><a href="tel:+9779843573229" itemprop="telephone"
-										aria-label="Call phone number"><span class="icon icon-phone"
-											aria-hidden="true"></span><span class="text">+977 984-357-3229</span></a>
-								</li>
-								<li><a href="mailto:aayambishow007@gmail.com" itemprop="email"
-										aria-label="Send email"><span class="icon icon-envelope"
-											aria-hidden="true"></span><span
-											class="text">aayambishow007@gmail.com</span></a></li>
-							</ul>
-						</address>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12 text-center">
-					<p>&copy;
-						<script>document.write(new Date().getFullYear());</script> All rights reserved | <span
-							itemprop="copyrightHolder">Bishow Shrestha</span> | Software Developer Portfolio
-					</p>
-				</div>
-			</div>
-			<!-- External visitor counter removed (was intermittently failing to load and logging console errors) -->
-			</div>
-	</footer>
-
-
-
-	<!-- loader -->
-	<div id="ftco-loader" class="show fullscreen"><svg class="circular">
-			<circle class="path-bg" cx="24" cy="24" r="22" />
-			<circle class="path" cx="24" cy="24" r="22" />
-		</svg></div>
-
-	<!-- Core JavaScript files - deferred for better performance -->
-	<!-- jQuery from CDN - better compressed and likely cached -->
-	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
-		integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous" defer></script>
-	<script src="js/jquery-migrate-3.0.1.min.js" defer></script>
-	<script src="js/popper.min.js" defer></script>
-	<script src="js/bootstrap.min.js" defer></script>
-	<script src="js/jquery.easing.1.3.js" defer></script>
-	<script src="js/jquery.waypoints.min.js" defer></script>
-	<script src="js/aos.js" defer></script>
-	<script src="js/jquery.animateNumber.min.js" defer></script>
-	<script src="js/main.js" defer></script>
-
-	<!-- External scripts - deferred loading -->
-	<script src="script.js?v=202604" defer></script>
-
-	<!-- Three.js loaded lazily when needed to reduce initial bundle -->
-	<script>
-		// Lazy load Three.js only when hero section is visible
-		function loadThreeJS() {
-			if (typeof THREE !== 'undefined') return; // Already loaded
-
-			const script = document.createElement('script');
-			script.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
-			script.crossOrigin = 'anonymous';
-			script.referrerPolicy = 'no-referrer';
-			script.onload = function () {
-				// Load enhancements after Three.js is ready
-				const enhancementScript = document.createElement('script');
-				enhancementScript.src = 'enhancements-3d.js?v=202604';
-				document.body.appendChild(enhancementScript);
-			};
-			document.body.appendChild(script);
-		}
-
-		// Load when hero section is in viewport or after 2 seconds
-		if ('IntersectionObserver' in window) {
-			const observer = new IntersectionObserver((entries) => {
-				entries.forEach(entry => {
-					if (entry.isIntersecting) {
-						loadThreeJS();
-						observer.disconnect();
-					}
-				});
-			});
-			const heroSection = document.querySelector('.hero-wrap');
-			if (heroSection) observer.observe(heroSection);
-		}
-		// Fallback: load after 2 seconds
-		setTimeout(loadThreeJS, 2000);
-	</script>
-
-	<!-- Dark Mode Toggle Button -->
-	<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-		<span class="theme-icon">🌙</span>
-	</button>
-
-</body>
-
-</html>
+﻿<h1 align="center">
+	<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=30&duration=3000&pause=1000&color=667EEA&center=true&vCenter=true&width=520&lines=Hi+👋+I'm+Bishow+Shrestha;Senior+Software+Engineer;.NET+%2B+Angular+Developer;Microservices+%7C+CI%2FCD+%7C+SQL"
+		alt="Typing SVG" />
+</h1>
+
+<p align="center">
+	<img src="https://komarev.com/ghpvc/?username=Aayam007&label=Profile%20Views&color=667eea&style=for-the-badge"
+		alt="Profile Views" />
+	<a href="https://github.com/Aayam007?tab=followers">
+		<img src="https://img.shields.io/github/followers/Aayam007?label=Followers&style=for-the-badge&color=764ba2"
+			alt="GitHub followers" />
+	</a>
+</p>
+
+<div align="center">
+	<img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="500" alt="Coding GIF" />
+</div>
+
+## 🚀 About Me
+
+```csharp
+public class BiShowShrestha : Developer
+{
+public string Name => "Bishow Kaji Shrestha";
+public string Location => "Kathmandu, Nepal 🇳🇵";
+public string Title => "Software Engineer";
+public string[] Specialization => new[]
+{
+".NET / ASP.NET Core",
+"Angular (TypeScript)",
+"Microservices Architecture",
+"SQL Server / Oracle / PostgreSQL"
+};
+
+public void GetCurrentFocus()
+{
+Console.WriteLine("Building scalable enterprise systems with .NET Core");
+Console.WriteLine("Delivering secure, compliant solutions (HIPAA)");
+}
+}
+```
+
+<img align="right" alt="Coding" width="400" src="https://raw.githubusercontent.com/devSouvik/devSouvik/master/gif3.gif">
+
+### 💼 Professional Journey
+
+- 🎓 **Education**:
+- MIT (Running) — Tribhuvan University
+- Bachelor Of Computer Application (2021) — Kantipur City College, Purbanchal University
+
+- 💻 **Experience** (6+ years):
+- **Senior Software Engineer** @ Infinite Computer Solutions (Feb 2024 – Present)
+- **Software Engineer II** @ Cotiviti Nepal (Jan 2023 – Feb 2024)
+- **Associate Team Lead / Sr. Software Engineer / Software Developer** @ InfoDevelopers Pvt. Ltd. (Mar 2020 – Jan 2023)
+- **Junior .NET Developer** @ Bitspanda Technology (Dec 2019 – Feb 2020)
+
+- 🌱 Currently building **U.S.-based insurance/healthcare management systems** with .NET + Angular
+- 💡 Focused on **clean code**, **architecture**, and **team leadership in Agile/Scrum**
+- 📫 Reach me: **aayambishow007@gmail.com** | **9843573229**
+- 🌐 Portfolio: **[bishowshrestha.com.np](https://bishowshrestha.com.np)**
+
+---
+
+## 💻 Technical Expertise
+
+### Backend Development
+```text
+.NET / ASP.NET Core ████████████████████░ 95%
+C# ████████████████████░ 92%
+SQL Server ███████████████████░░ 88%
+Microservices ██████████████████░░░ 82%
+IdentityServer/OAuth2 █████████████████░░░░ 78%
+```
+
+### Frontend Development
+```text
+Angular/TypeScript █████████████████░░░░ 80%
+JavaScript █████████████████░░░░ 80%
+HTML5/CSS3 ████████████████████░ 90%
+jQuery ███████████████████░░ 85%
+```
+
+### Tools & Platforms
+```text
+Git ████████████████████░ 92%
+JIRA/Agile ███████████████████░░ 88%
+CI/CD (Jenkins etc.) █████████████████░░░░ 80%
+SQL/Reporting Tools █████████████████░░░░ 80%
+```
+
+---
+
+## 🛠️ Tech Stack
+
+### Languages
+![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white)
+
+### Frameworks & Libraries
+![.NET Core](https://img.shields.io/badge/.NET_Core-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
+![ASP.NET](https://img.shields.io/badge/ASP.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
+![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
+![jQuery](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
+
+### Databases & Tools
+![SQL
+Server](https://img.shields.io/badge/SQL_Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white)
+![Oracle](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![Visual
+Studio](https://img.shields.io/badge/Visual_Studio-5C2D91?style=for-the-badge&logo=visual-studio&logoColor=white)
+![Telerik](https://img.shields.io/badge/Telerik-5CE500?style=for-the-badge&logo=progress&logoColor=white)
+
+---
+
+## 📊 GitHub Stats
+<div align="center">
+	<img src="https://github-readme-streak-stats.herokuapp.com/?user=Aayam007&theme=radical&hide_border=true&background=0D1117&stroke=667eea&ring=667eea&fire=764ba2&currStreakLabel=764ba2"
+		alt="GitHub Streak" />
+</div>
+
+<div align="center">
+	<img src="https://github-readme-activity-graph.vercel.app/graph?username=Aayam007&theme=react-dark&hide_border=true&area=true&bg_color=0D1117&color=667eea&line=764ba2&point=667eea"
+		alt="Contribution Graph" />
+</div>
+
+---
+
+## 🏆 GitHub Trophies
+
+<div align="center">
+	<img src="https://github-profile-trophy-tawny.vercel.app/?username=aayam007&theme=light" alt="GitHub Trophies" />
+</div>
+
+---
+
+## 📈 Contribution Snake
+
+<div align="center">
+	<img src="https://raw.githubusercontent.com/Aayam007/Aayam007/output/github-contribution-grid-snake-dark.svg"
+		alt="Snake animation" />
+</div>
+
+---
+
+## 🎯 Featured Projects
+
+### 🏥 Insurance Management System (HIPAA)
+**Project:** Mavis, Insight, MECA (Ongoing)
+**Tech Stack:** .NET, Angular, Oracle, SQL Server
+**Highlights:** Core feature development, OCR integration, code optimization, HIPAA-compliant delivery
+> Building and optimizing U.S.-based insurance management modules with secure, performant APIs
+
+### 🏦 Government Core Banking System (CBS)
+**Tech Stack:** .NET Core 3.1, SQL Server, Telerik Reporting, pqGrid
+**Highlights:** Team leadership, microservices architecture, reporting optimization, IdentityServer integration
+> Led delivery of a large-scale CBS for a government office (CIT), focused on reporting and secure auth
+
+### 🌱 Agro-Related CMS
+**Tech Stack:** C#, JavaScript, HTML, CSS, SQL
+**Highlights:** Third-party API integrations, database performance optimization, product maintenance
+> Developed and maintained an agro/veterinary-focused CMS with reliable integrations
+
+<div align="center">
+	<a href="https://github.com/Aayam007?tab=repositories">
+		<img src="https://img.shields.io/badge/View_All_Repositories-667eea?style=for-the-badge&logo=github&logoColor=white"
+			alt="View Projects" />
+	</a>
+</div>
+
+---
+
+## 📚 Currently Exploring
+
+```yaml
+🔹 Microservices Architecture: Building scalable distributed systems
+🔹 CI/CD: Jenkins, Bamboo, Bitbucket Pipelines, Octopus
+🔹 Messaging & Cache: RabbitMQ, Redis
+🔹 Search: Elasticsearch
+🔹 OCR Integration: Improving document processing workflows
+🔹 Design Patterns: Applied software architecture principles
+```
+
+---
+
+## ⚙️ Development Setup
+
+```yaml
+💻 Operating System: Windows 11 Pro
+🛠️ IDE: Visual Studio 2022 / VS Code
+🗄️ Database: SQL Server / Oracle / PostgreSQL
+🔧 Version Control: Git + GitHub
+📊 Project Management: JIRA
+✨ Code Quality: SonarQube, ReSharper
+🧪 Testing: xUnit, Moq, Selenium
+```
+
+**Daily Toolkit:**
+- 💻 Visual Studio Code for quick edits and web development
+- 🎨 Modern CSS frameworks for responsive designs
+- 📝 Documentation tools for technical writing
+- 🔧 Postman for API testing and development
+- 📊 SQL Server Management Studio for database management
+
+---
+
+## 🎓 Professional Journey Timeline
+
+```mermaid
+graph LR
+A[2012<br />SLC] --> B[2014<br />+2 Science]
+B --> C[2021<br />BCA Degree]
+C --> H[Running<br />MIT]
+C --> D[2019-2020<br />Junior .NET Dev<br />Bitspanda]
+D --> E[2020-2023<br />InfoDevelopers<br />Dev → ATL]
+E --> F[2023-2024<br />Cotiviti<br />SE II]
+F --> G[2024-Present<br />Infinite<br />Senior SE]
+```
+
+---
+
+## 💬 Let's Connect & Collaborate!
+
+<div align="center">
+
+	### 🤝 Available For:
+	✅ **Freelance Projects** - Web & Software Development
+	✅ **.NET Development Consulting** - Architecture & Best Practices
+	✅ **Code Reviews** - Quality Assurance & Optimization
+	✅ **Technical Mentoring** - Sharing knowledge & experience
+
+	### ⚡ Response Time: Usually within 24 hours
+
+	[![Website](https://img.shields.io/badge/🌐_Portfolio-bishowshrestha.com.np-667eea?style=for-the-badge)](https://bishowshrestha.com.np)
+	[![Email](https://img.shields.io/badge/📧_Email_Me-aayambishow007@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:aayambishow007@gmail.com)
+	[![LinkedIn](https://img.shields.io/badge/💼_LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/aayam007)
+	[![Twitter](https://img.shields.io/badge/🐦_Twitter-Follow-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/Aayam_world10)
+	[![Facebook](https://img.shields.io/badge/👥_Facebook-Add_Friend-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/aayam007)
+
+</div>
+
+---
+
+## 🎲 Fun Facts & Stats
+
+<div align="center">
+
+	| 📊 Metric | 💯 Value |
+	|-----------|----------|
+	| 🔢 Lines of Code Written | **500,000+** |
+	| ☕ Coffee Consumed | **∞** (Still counting) |
+	| 🐛 Bugs Squashed | Too many to count |
+	| 💡 "Aha!" Moments | Daily occurrence |
+	| 🎯 Favorite Debugging Tool | `Console.WriteLine()` |
+	| 🌙 Peak Productivity Hours | Late Night 🦉 |
+	| 🎮 Coding Soundtrack | Lo-fi Hip Hop |
+	| 📚 Learning Mode | Always ON |
+
+</div>
+
+---
+
+## 📝 Latest Insights & Articles
+
+<div align="center">
+
+	Coming Soon! Stay tuned for technical articles on:
+	- 🔷 .NET Core Best Practices
+	- 🔷 SQL Server Performance Optimization
+	- 🔷 Modern Web Development Techniques
+	- 🔷 Clean Code Principles
+
+</div>
+
+<!-- BLOG-POST-LIST:START -->
+<!-- BLOG-POST-LIST:END -->
+
+---
+
+## 🏅 Achievements & Milestones
+
+<div align="center">
+
+	| 🎯 Achievement | 📅 Date |
+	|----------------|---------|
+	| 🎓 Completed BCA Degree | 2021 |
+	| 🧩 Registered Scrum Master | 2021 |
+	| 🎓 Exemplary Leadership Training | 2022 |
+	| 🧩 Certified SAFe® Practitioner | 2024 |
+	| 🏅 Spot Award (Performer of month) | May 2025 |
+	| 🏅 Spark Award (Top Performer of Quarter) | Q2 2025 |
+	| 🏅 Spark Award (Performer of the Quarter) | Jan–Mar 2026 |
+
+</div>
+
+---
+
+## 💡 Developer Wisdom
+
+<div align="center">
+	<img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical" alt="Random Dev Quote" />
+</div>
+
+---
+
+## 📊 Weekly Coding Activity
+
+<!--START_SECTION:waka-->
+```text
+.NET Core 12 hrs 30 mins ████████████████░░░░░ 65.2%
+SQL 3 hrs 45 mins ████░░░░░░░░░░░░░░░░░ 19.6%
+JavaScript 1 hr 50 mins ██░░░░░░░░░░░░░░░░░░░ 9.6%
+HTML/CSS 45 mins █░░░░░░░░░░░░░░░░░░░░ 3.9%
+Other 20 mins ░░░░░░░░░░░░░░░░░░░░░ 1.7%
+```
+<!--END_SECTION:waka-->
+
+<div align="center">
+	<i>📈 These stats update automatically via WakaTime integration</i>
+</div>
+
+---
+
+## 📫 Quick Contact Card
+
+```typescript
+const bishow = {
+name: "Bishow Kaji Shrestha",
+location: "Kathmandu, Nepal 🇳🇵",
+role: "Senior Software Engineer",
+email: "aayambishow007@gmail.com",
+phone: "9843573229",
+website: "https://bishowshrestha.com.np",
+
+workingOn: "Enterprise systems with .NET + Angular (HIPAA-aware)",
+learning: ["Microservices", "Docker", "Azure Cloud"],
+collaborateOn: "Web development & .NET projects",
+askMeAbout: [".NET / ASP.NET Core", "Angular", "SQL Server", "Microservices", "CI/CD"],
+funFact: "I debug with console.log() and I'm not ashamed! 😄"
+};
+
+console.log(`💼 Let's build something amazing together!`);
+```
+
+
+<img
+	src="https://raw.githubusercontent.com/Trilokia/Trilokia/379277808c61ef204768a61bbc5d25bc7798ccf1/bottom_header.svg" />
+
+**Made with 💜 by Bishow Shrestha | Software Engineer from Nepal 🇳🇵**
+
+*"Code is poetry written in logic"*
+
+</div>
