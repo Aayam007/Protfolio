@@ -11,11 +11,15 @@
 	<meta name="author" content="Bishow Kaji Shrestha" />
 	<title>Bishow Kaji Shrestha — README</title>
 
+	<!-- Preconnect to external CDNs for faster loading -->
+	<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+	<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
 	<!-- GitHub Markdown styling (closest to typical Markdown preview) -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.6.1/github-markdown.min.css">
 
-	<!-- Code highlighting -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github-dark.min.css">
+	<!-- Code highlighting from cdnjs (more reliable than jsDelivr for highlight.js) -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
 
 	<style>
 		:root {
@@ -157,15 +161,15 @@
 
 		/* Prevent layout shift for common image sizes */
 		.markdown-body img[width="500"] {
-			min-height: 281px;
-			/* 500px * 9/16 aspect ratio */
-			aspect-ratio: 500 / 281;
+			min-height: 375px;
+			/* 500px * 4/3 aspect ratio (actual GIF dimensions: 480x360) */
+			aspect-ratio: 500 / 375;
 		}
 
 		.markdown-body img[width="400"] {
-			min-height: 225px;
-			/* 400px * 9/16 aspect ratio */
-			aspect-ratio: 400 / 225;
+			min-height: 300px;
+			/* 400px * 4/3 aspect ratio (actual GIF dimensions: 800x600) */
+			aspect-ratio: 400 / 300;
 		}
 
 		/* Badge images should have fixed height */
@@ -224,7 +228,7 @@
 </p>
 
 <div align="center">
-  <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="500" height="281" alt="Coding GIF"/>
+  <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="500" height="375" alt="Coding GIF"/>
 </div>
 
 ## 🚀 About Me
@@ -251,7 +255,7 @@ public class BiShowShrestha : Developer
 }
 ```
 
-<img align="right" alt="Coding" width="400" height="225" src="https://raw.githubusercontent.com/devSouvik/devSouvik/master/gif3.gif">
+<img align="right" alt="Coding" width="400" height="300" src="https://raw.githubusercontent.com/devSouvik/devSouvik/master/gif3.gif">
 
 ### 💼 Professional Journey
 
@@ -522,8 +526,8 @@ console.log(`💼 Let's build something amazing together!`);
 	<!-- Markdown renderer -->
 	<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
 
-	<!-- Highlight.js - browser compatible build -->
-	<script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/highlight.min.js"></script>
+	<!-- Highlight.js - browser compatible build from cdnjs (more reliable) -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 
 	<!-- Mermaid loaded dynamically only when needed (saves 679 KiB if no diagrams) -->
 
