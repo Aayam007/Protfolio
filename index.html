@@ -66,182 +66,9 @@
 	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
 		rel="stylesheet">
 
-	<!-- Favicon - Modern SVG with fallback -->
-	<link rel="icon" type="image/svg+xml"
-		href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%236c8ef4'/%3E%3Cstop offset='100%25' style='stop-color:%23a78bfa'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='20' fill='url(%23g)'/%3E%3Ctext x='50' y='72' font-family='Arial,sans-serif' font-size='60' font-weight='700' fill='white' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
-	<link rel="alternate icon" type="image/png"
-		href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAA7AAAAOwBeShxvQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAKCSURBVFiFzZfPaxNBFMe/M5vdZJNNk6ZN0x+aWkuptYhQqKIHQT0IHvwP/Av8D7x48ODB/8CLBy9S8KAHoSdBEKQoSLG0tZZqbU3TJk2ySbPZ3ZnxkG2TJrtJa30wMLsz7837zLz35r0B/udSDoC11hoA+gB0A+gE0AagVa9pAFQATgAUABQB5AHkAOQAnALIA8jqtQzgVK8VAEUIUQZgAGgA0KzXJgCNem3Wazu9psW/C4AKwAFgA7ABWPVqBWDRa7NeWwCYL+rvuQClp6fnPYDS09PzHoBSqVS+AFCVSuULAJVKpXL9c7le01fXNeh9g/5VXRF/X1cSQuQBKJVKZaParlar1fX19fVlAMva2toXAGptbW0ZQG1tbW0ZgFpZWVlZWlr6uLS09FEIIf5Xcq8DKCoqKiqqqChq3boK3fooFXVFFLXr+n7qJYLDAHxra2tfALy+vr5FAF6v1+vxeDzLdrvdtba2tuh0OledTqfH4XC47Xa72+l0rnZ0dGw4nc5Vt9u91tHRselwONbcbveq2+1ec7lca3a7/avL5Vpra2vbdLlcbpfL9dXj8XitVutXq9W6ZrVa1ywWS8Zqta5ZLBY/gAyEyADwQYg0AJ/Vak1brda0xWJJu1yuTVtb25bFYsm43e6s2+1eds/3LQMI5fN5PwB/Pp/3A/Dn8/llAMF8Pr8MIJjL5YIAQvl8PgggFAgEwrlcLgwgHAgEQoVCIQwglM/nI4VCIQIgEgwGo4FAIFwsFqPFYjFWLBajhUIhViwWY/l8PlYsFuO5XC5RKBTixWIxUSgUEsViMVEoFJK5XC4JIAmBAZAAIA8hEgBsECIBwKY3IhGJxEsA3N/z/Rc/AWwvFh1Y+BESAAAAAElFTkSuQmCC">
-	<link rel="apple-touch-icon" sizes="180x180"
-		href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cdefs%3E%3ClinearGradient id='g2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%236c8ef4'/%3E%3Cstop offset='100%25' style='stop-color:%23a78bfa'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='180' height='180' rx='40' fill='url(%23g2)'/%3E%3Ctext x='90' y='130' font-family='Arial,sans-serif' font-size='110' font-weight='700' fill='white' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
-
-	<!-- Critical CSS Inline for instant render -->
-	<style>
-		/* Critical above-the-fold styles */
-		:root {
-			--primary-color: #6c8ef4;
-			--accent-color: #a78bfa;
-			--bg-color: #fafbfc;
-			--surface-color: #fff;
-			--text-primary: #1f2937;
-			--text-secondary: #6b7280;
-			--border-color: rgba(31, 41, 55, .12);
-			--transition-fast: .2s cubic-bezier(.4, 0, .2, 1);
-			--transition-base: .3s cubic-bezier(.4, 0, .2, 1);
-			--transition-slow: .5s cubic-bezier(.4, 0, .2, 1)
-		}
-
-		html[data-theme=dark] {
-			--bg-color: #0f172a;
-			--surface-color: #1e293b;
-			--text-primary: #f1f5f9;
-			--text-secondary: #cbd5e1;
-			--border-color: rgba(241, 245, 249, .14)
-		}
-
-		* {
-			margin: 0;
-			padding: 0;
-			box-sizing: border-box;
-			font-family: Poppins, sans-serif
-		}
-
-		html,
-		body {
-			background: var(--bg-color);
-			color: var(--text-primary);
-			transition: background-color var(--transition-slow), color var(--transition-slow)
-		}
-
-		body {
-			font-display: swap;
-			text-rendering: optimizeSpeed
-		}
-
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6,
-		p {
-			line-height: 1.5
-		}
-
-		img {
-			height: auto;
-			max-width: 100%;
-			display: block
-		}
-
-		.hero-wrap {
-			position: relative;
-			overflow: hidden;
-			min-height: 100vh
-		}
-
-		#ftco-navbar {
-			backdrop-filter: blur(12px);
-			-webkit-backdrop-filter: blur(12px);
-			background: rgba(250, 251, 252, .72) !important;
-			border-bottom: 1px solid var(--border-color);
-			transition: background-color var(--transition-slow)
-		}
-
-		html[data-theme=dark] #ftco-navbar {
-			background: rgba(15, 23, 42, .72) !important
-		}
-
-		.ftco-animate {
-			opacity: 0;
-			visibility: hidden
-		}
-
-		.hero-tagline {
-			font-size: 1.1rem;
-			color: rgba(255, 255, 255, 0.9)
-		}
-
-		/* Prevent layout shift for images */
-		img:not([width]):not([height]) {
-			aspect-ratio: attr(width) / attr(height);
-		}
-
-		/* Optimize partner logo container */
-		.partner img {
-			width: 150px;
-			height: 50px;
-			object-fit: contain;
-		}
-
-		/* Additional critical styles for hero section to prevent CLS */
-		.hero-wrap .overlay {
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			background: rgba(0, 0, 0, 0.4);
-		}
-
-		.hero-wrap .container {
-			position: relative;
-			z-index: 2;
-		}
-
-		.js-fullheight {
-			min-height: 100vh;
-			display: flex;
-			align-items: center;
-		}
-
-		.slider-text {
-			min-height: 100vh;
-		}
-
-		/* Optimize layout stability */
-		.ftco-section {
-			position: relative;
-		}
-
-		.ftco-no-pt {
-			padding-top: 0 !important;
-		}
-
-		.ftco-no-pb {
-			padding-bottom: 0 !important;
-		}
-
-		/* Preload critical hero background */
-		.hero-wrap::before {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
-			z-index: 0;
-		}
-
-		/* SVG Loader styles - moved from inline attributes */
-		.circular {
-			width: 48px;
-			height: 48px;
-		}
-
-		.path-bg {
-			fill: none;
-			stroke-width: 4;
-			stroke: #eeeeee;
-		}
-
-		.path {
-			fill: none;
-			stroke-width: 4;
-			stroke-miterlimit: 10;
-			stroke: #F96D00;
-		}
-	</style>
+	<!-- Favicon -->
+	<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+	<link rel="apple-touch-icon" sizes="180x180" href="images/favicon.svg">
 
 	<!-- DNS prefetch for external resources -->
 	<link rel="dns-prefetch" href="https://fonts.googleapis.com">
@@ -251,29 +78,28 @@
 	<link rel="dns-prefetch" href="https://www.googletagmanager.com">
 	<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
 
-	<!-- Preload only critical CSS for instant render -->
-	<link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-	<link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<!-- Critical CSS -->
+	<link rel="stylesheet" href="critical.css">
+	<link rel="preload" href="css/style.css" as="style" data-async-style>
+	<link rel="preload" href="style.css" as="style" data-async-style>
 
 	<!-- 3D Enhancement Styles -->
 	<link rel="stylesheet" href="enhancements.css">
 
 	<!-- Bootstrap CSS loaded with async pattern -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" media="print"
-		onload="this.media='all';this.onload=null;">
+	<link rel="preload" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" as="style"
+		data-async-style>
 
 	<!-- Non-critical CSS loaded asynchronously with media print trick -->
-	<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css" media="print"
-		onload="this.media='all';this.onload=null;">
-	<link rel="stylesheet" href="css/ionicons.min.css" media="print" onload="this.media='all';this.onload=null;">
-	<link rel="stylesheet" href="css/flaticon.css" media="print" onload="this.media='all';this.onload=null;">
-	<link rel="stylesheet" href="css/icomoon.css" media="print" onload="this.media='all';this.onload=null;">
-	<link rel="stylesheet" href="css/animate.css" media="print" onload="this.media='all';this.onload=null;">
-	<link rel="stylesheet" href="css/aos.css" media="print" onload="this.media='all';this.onload=null;">
-	<link rel="stylesheet" href="css/owl.carousel.min.css" media="print" onload="this.media='all';this.onload=null;">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css" media="print"
-		onload="this.media='all';this.onload=null;">
-	<link rel="stylesheet" href="css/magnific-popup.css" media="print" onload="this.media='all';this.onload=null;">
+	<link rel="preload" href="css/open-iconic-bootstrap.min.css" as="style" data-async-style>
+	<link rel="preload" href="css/ionicons.min.css" as="style" data-async-style>
+	<link rel="preload" href="css/flaticon.css" as="style" data-async-style>
+	<link rel="preload" href="css/icomoon.css" as="style" data-async-style>
+	<link rel="preload" href="css/animate.css" as="style" data-async-style>
+	<link rel="preload" href="css/aos.css" as="style" data-async-style>
+	<link rel="preload" href="css/owl.carousel.min.css" as="style" data-async-style>
+	<link rel="preload" href="css/owl.theme.default.min.css" as="style" data-async-style>
+	<link rel="preload" href="css/magnific-popup.css" as="style" data-async-style>
 
 	<!-- Fallback for browsers that don't support preload -->
 	<noscript>
@@ -295,6 +121,7 @@
 	<script>
 		!function (n) { "use strict"; n.loadCSS || (n.loadCSS = function () { }); var o = loadCSS.relpreload = {}; if (o.support = function () { var e; try { e = n.document.createElement("link").relList.supports("preload") } catch (t) { e = !1 } return function () { return e } }(), o.bindMediaToggle = function (t) { var e = t.media || "all"; function a() { t.addEventListener ? t.removeEventListener("load", a) : t.attachEvent && t.detachEvent("onload", a), t.setAttribute("onload", null), t.media = e } t.addEventListener ? t.addEventListener("load", a) : t.attachEvent && t.attachEvent("onload", a), setTimeout(function () { t.rel = "stylesheet", t.media = "only x" }), setTimeout(a, 3e3) }, !o.support()) { o.poly = function () { if (!n.document.getElementsByTagName) return; for (var t = n.document.getElementsByTagName("link"), e = 0; e < t.length; e++) { var a = t[e]; "preload" !== a.rel || "style" !== a.getAttribute("as") || a.getAttribute("data-loadcss") || (a.setAttribute("data-loadcss", !0), o.bindMediaToggle(a)) } }, o.poly(); var t = n.setInterval(o.poly, 500); n.addEventListener ? n.addEventListener("load", function () { o.poly(), n.clearInterval(t) }) : n.attachEvent && n.attachEvent("onload", function () { o.poly(), n.clearInterval(t) }) } "undefined" != typeof exports ? exports.loadCSS = loadCSS : n.loadCSS = loadCSS }("undefined" != typeof global ? global : this);
 	</script>
+	<script src="asset-loader.js" defer></script>
 
 	<script data-ad-client="ca-pub-5872969111929010" async
 		src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

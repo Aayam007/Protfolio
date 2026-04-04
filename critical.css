@@ -1,0 +1,153 @@
+/* Critical above-the-fold styles */
+:root {
+  --primary-color: #6c8ef4;
+  --accent-color: #a78bfa;
+  --bg-color: #fafbfc;
+  --surface-color: #fff;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --border-color: rgba(31, 41, 55, 0.12);
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html[data-theme="dark"] {
+  --bg-color: #0f172a;
+  --surface-color: #1e293b;
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --border-color: rgba(241, 245, 249, 0.14);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
+}
+
+html,
+body {
+  background: var(--bg-color);
+  color: var(--text-primary);
+  transition: background-color var(--transition-slow), color var(--transition-slow);
+}
+
+body {
+  text-rendering: optimizeSpeed;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  line-height: 1.5;
+}
+
+img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.hero-wrap {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+#ftco-navbar {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(250, 251, 252, 0.72) !important;
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color var(--transition-slow);
+}
+
+html[data-theme="dark"] #ftco-navbar {
+  background: rgba(15, 23, 42, 0.72) !important;
+}
+
+.ftco-animate {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.hero-tagline {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+img:not([width]):not([height]) {
+  aspect-ratio: attr(width) / attr(height);
+}
+
+.partner img {
+  width: 150px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.hero-wrap .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-wrap .container {
+  position: relative;
+  z-index: 2;
+}
+
+.js-fullheight {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.slider-text {
+  min-height: 100vh;
+}
+
+.ftco-section {
+  position: relative;
+}
+
+.ftco-no-pt {
+  padding-top: 0 !important;
+}
+
+.ftco-no-pb {
+  padding-bottom: 0 !important;
+}
+
+.hero-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+}
+
+.circular {
+  width: 48px;
+  height: 48px;
+}
+
+.path-bg {
+  fill: none;
+  stroke: #eee;
+  stroke-width: 4;
+}
+
+.path {
+  fill: none;
+  stroke: #f96d00;
+  stroke-width: 4;
+  stroke-miterlimit: 10;
+}

@@ -289,15 +289,7 @@ class TypingAnimation {
 class CursorTrail {
     constructor() {
         this.canvas = document.createElement('canvas');
-        this.canvas.style.cssText = `
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 9999;
-    `;
+        this.canvas.id = 'cursor-trail-canvas';
         document.body.appendChild(this.canvas);
 
         this.ctx = this.canvas.getContext('2d');
@@ -374,15 +366,6 @@ function init3DEnhancements() {
         // Create container for Three.js canvas
         const particleContainer = document.createElement('div');
         particleContainer.id = '3d-particles';
-        particleContainer.style.cssText = `
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      pointer-events: none;
-    `;
         heroSection.insertBefore(particleContainer, heroSection.firstChild);
         console.log('✅ Particle container created and inserted');
 
