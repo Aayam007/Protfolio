@@ -160,30 +160,31 @@
 		}
 
 		/* Prevent layout shift for common image sizes */
-		.markdown-body img[width="500"] {
-			/* 500px * 4/3 aspect ratio (actual GIF dimensions: 480x360) */
+		.markdown-body img[width="480"] {
+			/* 480px * 4/3 aspect ratio (GIPHY: 480x360) */
 			aspect-ratio: 4 / 3;
 		}
 
 		.markdown-body img[width="400"] {
-			/* 400px * 4/3 aspect ratio (actual GIF dimensions: 800x600) */
+			/* 400px * 4/3 aspect ratio (GitHub GIF: 800x600) */
 			aspect-ratio: 4 / 3;
 		}
 
-		/* Badge images should have fixed height */
+		/* Badge images should scale proportionally */
 		.markdown-body img[src*="shields.io"],
 		.markdown-body img[src*="badge"],
 		.markdown-body img[src*="for-the-badge"] {
-			height: 28px;
-			min-height: 28px;
+			max-height: 28px;
 			width: auto;
+			height: auto;
 		}
 
 		/* Profile view counter and similar badges */
 		.markdown-body img[src*="komarev.com"],
 		.markdown-body img[src*="ghpvc"] {
-			height: 28px;
-			min-height: 28px;
+			max-height: 28px;
+			width: auto;
+			height: auto;
 		}
 
 		/* Prevent code block layout shifts */
@@ -225,13 +226,13 @@
   </a>
 </p>
 
+<!-- Note: For best performance, consider converting GIF to video format (WebM/MP4) to save ~413 KiB -->
 <div align="center">
-  <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/source.gif" 
-       srcset="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif 480w,
-               https://media.giphy.com/media/qgQUggAC3Pfv687qPC/source.gif 800w" 
-       sizes="(max-width: 768px) 100vw, 500px"
-       width="500" 
-       height="375" 
+  <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" 
+       srcset="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif 480w" 
+       sizes="(max-width: 768px) 100vw, 480px"
+       width="480" 
+       height="360" 
        alt="Coding GIF" 
        loading="lazy"/>
 </div>
@@ -265,8 +266,6 @@ public class BiShowShrestha : Developer
      width="400" 
      height="300" 
      src="https://raw.githubusercontent.com/devSouvik/devSouvik/master/gif3.gif"
-     srcset="https://raw.githubusercontent.com/devSouvik/devSouvik/master/gif3.gif 1x,
-             https://raw.githubusercontent.com/devSouvik/devSouvik/master/gif3.gif 2x"
      loading="lazy">
 
 ### 💼 Professional Journey
