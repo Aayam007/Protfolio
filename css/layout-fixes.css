@@ -1,0 +1,137 @@
+/* Additional fixes for icons and layout alignment */
+
+/* Ensure service section icons display properly */
+.services-1 .icon {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, var(--primary-color, #6c8ef4) 0%, var(--accent-color, #a78bfa) 100%);
+    border-radius: 50%;
+}
+
+.services-1 .icon i,
+.services-1 .icon span {
+    font-size: 48px;
+    font-style: normal;
+}
+
+/* Resume section icon fixes */
+.resume-wrap .icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color, #6c8ef4) 0%, var(--accent-color, #a78bfa) 100%);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.resume-wrap .icon span,
+.resume-wrap .icon i {
+    font-size: 28px;
+    color: white;
+    font-style: normal;
+}
+
+/* Contact section icon fixes */
+.contact-info .icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, var(--primary-color, #6c8ef4) 0%, var(--accent-color, #a78bfa) 100%);
+    border-radius: 50%;
+}
+
+.contact-info .icon span {
+    font-size: 28px;
+    color: white;
+    font-style: normal;
+}
+
+/* Footer social icons fix */
+.ftco-footer-social li a span {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 18px;
+}
+
+/* Ensure text alignment in sections */
+.heading-section {
+    text-align: center;
+}
+
+.heading-section .big,
+.heading-section .big-2 {
+    font-size: 80px;
+    font-weight: 700;
+    opacity: 0.06;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Fix image backgrounds */
+.img-about .img,
+.bg-about {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.project.img {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 400px;
+}
+
+/* Ensure partner images align properly */
+.ftco-partner .partner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+}
+
+/* Fix for hero section text alignment */
+.hero-wrap .text {
+    text-align: center;
+}
+
+.hero-wrap .text h1,
+.hero-wrap .text h2,
+.hero-wrap .text p {
+    color: white;
+}
+
+/* Ensure proper spacing for about section */
+.ftco-about .row {
+    align-items: center;
+}
+
+/* Fix counter section alignment */
+.counter-wrap {
+    text-align: center;
+}
+
+/* Ensure badges are readable */
+.badge {
+    font-size: 14px;
+    padding: 8px 12px;
+    margin: 4px;
+    display: inline-block;
+}

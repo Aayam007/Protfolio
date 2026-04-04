@@ -64,13 +64,13 @@ img {
 #ftco-navbar {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  background: rgba(250, 251, 252, 0.72) !important;
+  background: rgba(250, 251, 252, 0.95) !important;
   border-bottom: 1px solid var(--border-color);
   transition: background-color var(--transition-slow);
 }
 
 html[data-theme="dark"] #ftco-navbar {
-  background: rgba(15, 23, 42, 0.72) !important;
+  background: rgba(15, 23, 42, 0.95) !important;
 }
 
 .ftco-animate {

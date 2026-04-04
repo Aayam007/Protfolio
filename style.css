@@ -143,10 +143,9 @@ html[data-theme="dark"] #ftco-navbar {
 }
 
 #ftco-navbar .navbar-brand span {
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--primary-color) !important;
+  font-weight: 800;
+  /* Gradient removed for better accessibility - solid color provides better contrast */
 }
 
 #ftco-navbar .navbar-nav .nav-link {

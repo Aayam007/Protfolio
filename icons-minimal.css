@@ -1,0 +1,218 @@
+/* Minimal icon replacements - inline critical icons only */
+
+/* Ensure all icons display properly */
+[class*="icon-"]::before,
+[class*="flaticon-"]::before,
+[class*="oi-"]::before,
+[class*="ion-"]::before {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Open Iconic Menu Icon - used once */
+.oi-menu::before {
+    content: "☰";
+    font-size: 1.2em;
+    line-height: 1;
+}
+
+/* Ionicons Arrow Down - used once  */
+.ion-ios-arrow-round-down::before {
+    content: "↓";
+    font-size: 1.5em;
+}
+
+/* icomoon icons - replaced with Unicode/SVG alternatives */
+.icon-code::before {
+    content: "</>";
+    font-family: monospace;
+}
+
+.icon-lock::before {
+    content: "🔒";
+}
+
+.icon-paint-brush::before {
+    content: "🎨";
+}
+
+.icon-shield::before {
+    content: "🛡️";
+}
+
+.icon-file-text::before {
+    content: "📄";
+}
+
+.icon-link::before {
+    content: "🔗";
+}
+
+.icon-clock::before {
+    content: "⏰";
+}
+
+.icon-type::before {
+    content: "Aa";
+    font-weight: bold;
+}
+
+.icon-hash::before {
+    content: "#";
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* Contact and location icons */
+.icon-map-signs::before,
+.icon-map-marker::before {
+    content: "📍";
+}
+
+.icon-phone::before,
+.icon-phone2::before {
+    content: "📞";
+}
+
+.icon-paper-plane::before,
+.icon-envelope::before {
+    content: "✉️";
+}
+
+.icon-globe::before {
+    content: "🌐";
+}
+
+/* Social media icons */
+.icon-twitter::before {
+    content: "𝕏";
+    font-weight: bold;
+}
+
+.icon-facebook::before {
+    content: "f";
+    font-family: serif;
+    font-weight: bold;
+    background: #1877f2;
+    color: white;
+    border-radius: 3px;
+    padding: 2px 5px;
+    display: inline-block;
+}
+
+.icon-github::before {
+    content: "⚙";
+}
+
+.icon-linkedin::before {
+    content: "in";
+    font-weight: bold;
+    background: #0077b5;
+    color: white;
+    border-radius: 2px;
+    padding: 2px 4px;
+    display: inline-block;
+}
+
+/* Navigation arrow */
+.icon-long-arrow-right::before {
+    content: "→";
+    margin-right: 0.5rem;
+}
+
+/* Flaticon replacements - simple emoji alternatives */
+.flaticon-ideas::before,
+.flaticon-idea::before,
+i.flaticon-ideas::before,
+i.flaticon-idea::before {
+    content: "💡";
+    font-style: normal;
+}
+
+.flaticon-analysis::before,
+i.flaticon-analysis::before {
+    content: "📊";
+    font-style: normal;
+}
+
+.flaticon-innovation::before,
+i.flaticon-innovation::before {
+    content: "🚀";
+    font-style: normal;
+}
+
+.flaticon-ux-design::before,
+i.flaticon-ux-design::before {
+    content: "🎨";
+    font-style: normal;
+}
+
+.icon-hash::before {
+    content: "#";
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.icon-map-marker::before {
+    content: "📍";
+}
+
+.icon-phone::before {
+    content: "📞";
+}
+
+.icon-envelope::before {
+    content: "✉️";
+}
+
+.icon-twitter::before {
+    content: "𝕏";
+    font-weight: bold;
+}
+
+.icon-facebook::before {
+    content: "f";
+    font-family: serif;
+    font-weight: bold;
+    background: #1877f2;
+    color: white;
+    border-radius: 3px;
+    padding: 2px 5px;
+}
+
+.icon-github::before {
+    content: "⚙";
+}
+
+.icon-linkedin::before {
+    content: "in";
+    font-weight: bold;
+    background: #0077b5;
+    color: white;
+    border-radius: 2px;
+    padding: 2px 4px;
+}
+
+.icon-instagram::before {
+    content: "📷";
+}
+
+.icon-globe::before {
+    content: "🌐";
+}
+
+.icon-paper-plane::before {
+    content: "✈️";
+}
+
+/* Flaticon replacements - simple emoji alternatives */
+.flaticon-ideas::before,
+.flaticon-analysis::before,
+.flaticon-innovation::before,
+.flaticon-ux-design::before,
+.flaticon-idea::before {
+    content: "💡";
+}
