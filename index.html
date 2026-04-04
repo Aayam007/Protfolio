@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -10,6 +10,22 @@
 		content="Senior Software Engineer, .NET Core, ASP.NET Core, Angular, TypeScript, C#, SQL Server, Healthcare HIPAA, Core Banking, Agile Scrum, SAFe Practitioner, Microservices, Full Stack Developer, Bishow Shrestha" />
 	<meta name="author" content="Bishow Kaji Shrestha" />
 	<title>Bishow Kaji Shrestha — README</title>
+
+	<!-- DNS prefetch and preconnect for third-party resources -->
+	<!-- Note: Cache TTLs are controlled by third-party services (5m-7d) and cannot be modified from client-side -->
+	<link rel="dns-prefetch" href="https://raw.githubusercontent.com">
+	<link rel="dns-prefetch" href="https://media.giphy.com">
+	<link rel="dns-prefetch" href="https://img.shields.io">
+	<link rel="dns-prefetch" href="https://github-readme-streak-stats.herokuapp.com">
+	<link rel="dns-prefetch" href="https://github-readme-activity-graph.vercel.app">
+	<link rel="dns-prefetch" href="https://github-profile-trophy-tawny.vercel.app">
+	<link rel="dns-prefetch" href="https://readme-typing-svg.herokuapp.com">
+	<link rel="dns-prefetch" href="https://komarev.com">
+
+	<!-- Preconnect to critical image hosts -->
+	<link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
+	<link rel="preconnect" href="https://media.giphy.com" crossorigin>
+	<link rel="preconnect" href="https://img.shields.io" crossorigin>
 
 	<!-- Preconnect to external CDNs for faster loading -->
 	<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -350,6 +366,10 @@ SQL/Reporting Tools  █████████████████░░�
 ![Telerik](https://img.shields.io/badge/Telerik-5CE500?style=for-the-badge&logo=progress&logoColor=white)
 
 ---
+## 🎓 Professional Journey Timeline
+<div>
+    <img src="images/journey.png" alt="Professional Journey Timeline" />
+</div>
 
 ## 📊 GitHub Stats
 <div align="center">
@@ -415,7 +435,7 @@ SQL/Reporting Tools  █████████████████░░�
 🔹 Design Patterns: Applied software architecture principles
 ```
 
----
+
 
 ## ⚙️ Development Setup
 
@@ -435,21 +455,6 @@ SQL/Reporting Tools  █████████████████░░�
 - 📝 Documentation tools for technical writing
 - 🔧 Postman for API testing and development
 - 📊 SQL Server Management Studio for database management
-
----
-
-## 🎓 Professional Journey Timeline
-
-```mermaid
-graph LR
-  A[2012<br/>SLC] --> B[2014<br/>+2 Science]
-  B --> C[2021<br/>BCA Degree]
-  C --> H[Running<br/>MIT]
-  C --> D[2019-2020<br/>Junior .NET Dev<br/>Bitspanda]
-  D --> E[2020-2023<br/>InfoDevelopers<br/>Dev → ATL]
-  E --> F[2023-2024<br/>Cotiviti<br/>SE II]
-  F --> G[2024-Present<br/>Infinite<br/>Senior SE]
-```
 
 ---
 
@@ -661,16 +666,14 @@ console.log(`💼 Let's build something amazing together!`);
 			const content = document.getElementById('content');
 			content.innerHTML = html;
 
-			// Highlight code immediately for better perceived performance
-			highlightCode(content);
+			// Use requestAnimationFrame to avoid forced reflow after innerHTML
+			// This allows the browser to batch layout calculations efficiently
+			requestAnimationFrame(() => {
+				// Highlight code for better perceived performance
+				highlightCode(content);
 
-			// Defer Mermaid rendering until browser is idle (non-blocking, saves 679 KiB from critical path)
-			if ('requestIdleCallback' in window) {
-				requestIdleCallback(() => renderMermaid(content), { timeout: 2000 });
-			} else {
-				// Fallback for browsers without requestIdleCallback
-				setTimeout(() => renderMermaid(content), 1000);
-			}
+				// Timeline is now pure HTML/CSS - Mermaid.js not needed (saves 929 KiB)
+			});
 		})();
 	</script>
 </body>
