@@ -11,8 +11,47 @@
 	<meta name="description"
 		content="Bishow Shrestha - Senior Software Engineer with 6+ years of experience in C#, ASP.NET Core, Angular, and SQL Server. Certified SAFe Practitioner and Scrum Master specializing in healthcare systems, Core Banking, and microservices architecture.">
 
+	<!-- Open Graph / Facebook Meta Tags for Social Sharing -->
+	<meta property="og:type" content="profile" />
+	<meta property="og:url" content="https://bishowshrestha.com.np/" />
+	<meta property="og:title" content="Bishow Shrestha | Senior Software Engineer | .NET Core" />
+	<meta property="og:description"
+		content="Senior Software Engineer with 6+ years of experience in C#, ASP.NET Core, Angular, and SQL Server. Certified SAFe Practitioner and Scrum Master." />
+	<meta property="og:image" content="https://bishowshrestha.com.np/images/bishow-shrestha-og.jpg" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta property="og:image:alt" content="Bishow Shrestha - Senior Software Engineer Portfolio" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:site_name" content="Bishow Shrestha Portfolio" />
+	<meta property="profile:first_name" content="Bishow" />
+	<meta property="profile:last_name" content="Shrestha" />
+	<meta property="profile:username" content="bishowshrestha" />
+
+	<!-- Twitter Card Meta Tags for Twitter Sharing -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:url" content="https://bishowshrestha.com.np/" />
+	<meta name="twitter:title" content="Bishow Shrestha | Senior Software Engineer | .NET Core" />
+	<meta name="twitter:description"
+		content="Senior Software Engineer with 6+ years of experience in C#, ASP.NET Core, Angular, and SQL Server. Certified SAFe Practitioner and Scrum Master." />
+	<meta name="twitter:image" content="https://bishowshrestha.com.np/images/bishow-shrestha-og.jpg" />
+	<meta name="twitter:image:alt" content="Bishow Shrestha - Senior Software Engineer Portfolio" />
+	<meta name="twitter:creator" content="@bishowshrestha" />
+
+	<!-- Additional SEO Meta Tags -->
+	<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+	<meta name="googlebot" content="index, follow" />
+	<meta name="bingbot" content="index, follow" />
+	<meta name="theme-color" content="#6c8ef4" />
+	<meta name="mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+	<meta name="apple-mobile-web-app-title" content="Bishow Shrestha" />
+
 	<!-- Canonical URL -->
 	<link rel="canonical" href="https://bishowshrestha.com.np/" />
+
+	<!-- Sitemap for Search Engines -->
+	<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 
 	<!-- LLM crawlers reference -->
 	<link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-friendly site information" />
@@ -116,31 +155,122 @@
 			opacity: 0;
 			visibility: hidden
 		}
+
+		.hero-tagline {
+			font-size: 1.1rem;
+			color: rgba(255, 255, 255, 0.9)
+		}
+
+		/* Prevent layout shift for images */
+		img:not([width]):not([height]) {
+			aspect-ratio: attr(width) / attr(height);
+		}
+
+		/* Optimize partner logo container */
+		.partner img {
+			width: 150px;
+			height: 50px;
+			object-fit: contain;
+		}
+
+		/* Additional critical styles for hero section to prevent CLS */
+		.hero-wrap .overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: rgba(0, 0, 0, 0.4);
+		}
+
+		.hero-wrap .container {
+			position: relative;
+			z-index: 2;
+		}
+
+		.js-fullheight {
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+		}
+
+		.slider-text {
+			min-height: 100vh;
+		}
+
+		/* Optimize layout stability */
+		.ftco-section {
+			position: relative;
+		}
+
+		.ftco-no-pt {
+			padding-top: 0 !important;
+		}
+
+		.ftco-no-pb {
+			padding-bottom: 0 !important;
+		}
+
+		/* Preload critical hero background */
+		.hero-wrap::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+			z-index: 0;
+		}
+
+		/* SVG Loader styles - moved from inline attributes */
+		.circular {
+			width: 48px;
+			height: 48px;
+		}
+
+		.path-bg {
+			fill: none;
+			stroke-width: 4;
+			stroke: #eeeeee;
+		}
+
+		.path {
+			fill: none;
+			stroke-width: 4;
+			stroke-miterlimit: 10;
+			stroke: #F96D00;
+		}
 	</style>
 
-	<!-- Preload critical JavaScript for faster execution -->
-	<link rel="preload" href="js/jquery.min.js" as="script">
-	<link rel="preload" href="js/bootstrap.min.js" as="script">
-	<link rel="preload" href="js/main.js" as="script">
-	<link rel="preload" href="script.js" as="script">
+	<!-- DNS prefetch for external resources -->
+	<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+	<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+	<link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com">
+	<link rel="dns-prefetch" href="https://code.iconify.design">
+	<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+	<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
 
-	<!-- Preload critical CSS for fast loading -->
-	<link rel="preload" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" as="style"
-		onload="this.onload=null;this.rel='stylesheet'">
+	<!-- Preload only critical CSS for instant render -->
 	<link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 	<link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
-	<!-- Non-critical CSS loaded asynchronously -->
-	<link rel="preload" href="css/open-iconic-bootstrap.min.css" as="style"
-		onload="this.onload=null;this.rel='stylesheet'">
-	<link rel="preload" href="css/ionicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-	<link rel="preload" href="css/flaticon.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-	<link rel="preload" href="css/icomoon.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-	<link rel="preload" href="css/animate.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-	<link rel="preload" href="css/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-	<link rel="preload" href="css/owl.carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-	<link rel="preload" href="css/owl.theme.default.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-	<link rel="preload" href="css/magnific-popup.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<!-- Bootstrap CSS loaded with async pattern -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" media="print"
+		onload="this.media='all';this.onload=null;">
+
+	<!-- Non-critical CSS loaded asynchronously with media print trick -->
+	<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css" media="print"
+		onload="this.media='all';this.onload=null;">
+	<link rel="stylesheet" href="css/ionicons.min.css" media="print" onload="this.media='all';this.onload=null;">
+	<link rel="stylesheet" href="css/flaticon.css" media="print" onload="this.media='all';this.onload=null;">
+	<link rel="stylesheet" href="css/icomoon.css" media="print" onload="this.media='all';this.onload=null;">
+	<link rel="stylesheet" href="css/animate.css" media="print" onload="this.media='all';this.onload=null;">
+	<link rel="stylesheet" href="css/aos.css" media="print" onload="this.media='all';this.onload=null;">
+	<link rel="stylesheet" href="css/owl.carousel.min.css" media="print" onload="this.media='all';this.onload=null;">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css" media="print"
+		onload="this.media='all';this.onload=null;">
+	<link rel="stylesheet" href="css/magnific-popup.css" media="print" onload="this.media='all';this.onload=null;">
 
 	<!-- Fallback for browsers that don't support preload -->
 	<noscript>
@@ -175,13 +305,203 @@
 					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
 		})(window, document, 'script', 'dataLayer', 'GTM-53587PK');</script>
 	<!-- End Google Tag Manager -->
+
+	<!-- Structured Data - Person Schema -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "Person",
+		"name": "Bishow Kaji Shrestha",
+		"alternateName": "Bishow Shrestha",
+		"jobTitle": "Senior Software Engineer",
+		"description": "Senior Software Engineer with 6+ years of experience in C#, ASP.NET Core, Angular, and SQL Server. Certified SAFe Practitioner and Scrum Master specializing in healthcare systems, Core Banking, and microservices architecture.",
+		"url": "https://bishowshrestha.com.np/",
+		"email": "aayambishow007@gmail.com",
+		"telephone": "+977-9843573229",
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Kirtipur",
+			"addressRegion": "Kathmandu",
+			"addressCountry": "NP"
+		},
+		"nationality": {
+			"@type": "Country",
+			"name": "Nepal"
+		},
+		"workLocation": {
+			"@type": "Place",
+			"name": "Nepal"
+		},
+		"worksFor": {
+			"@type": "Organization",
+			"name": "Infinite Computer Solutions",
+			"address": {
+				"@type": "PostalAddress",
+				"addressCountry": "Nepal"
+			}
+		},
+		"knowsAbout": [
+			"C#",
+			".NET Core",
+			"ASP.NET Core",
+			"Angular",
+			"TypeScript",
+			"JavaScript",
+			"SQL Server",
+			"Oracle Database",
+			"PostgreSQL",
+			"Redis",
+			"Microservices Architecture",
+			"RESTful API",
+			"Healthcare HIPAA Compliance",
+			"Core Banking Systems",
+			"Agile Methodologies",
+			"Scrum",
+			"SAFe Framework",
+			"Identity Server",
+			"Elastic Search",
+			"RabbitMQ",
+			"Git",
+			"Jenkins",
+			"Full Stack Development"
+		],
+		"knowsLanguage": [
+			{
+				"@type": "Language",
+				"name": "English"
+			},
+			{
+				"@type": "Language",
+				"name": "Nepali"
+			}
+		],
+		"alumniOf": [
+			{
+				"@type": "EducationalOrganization",
+				"name": "MIT Australia",
+				"description": "Master of Information Technology (Ongoing)"
+			},
+			{
+				"@type": "EducationalOrganization",
+				"name": "Tribhuvan University",
+				"description": "Bachelor of Computer Application",
+				"endDate": "2021"
+			}
+		],
+		"hasCredential": [
+			{
+				"@type": "EducationalOccupationalCredential",
+				"credentialCategory": "Certification",
+				"name": "Certified SAFe Practitioner",
+				"dateCreated": "2024"
+			},
+			{
+				"@type": "EducationalOccupationalCredential",
+				"credentialCategory": "Certification",
+				"name": "Registered Scrum Master",
+				"dateCreated": "2021"
+			}
+		],
+		"hasOccupation": [
+			{
+				"@type": "Occupation",
+				"name": "Senior Software Engineer",
+				"occupationLocation": {
+					"@type": "Country",
+					"name": "Nepal"
+				},
+				"estimatedSalary": {
+					"@type": "MonetaryAmountDistribution",
+					"name": "Senior Software Engineer Salary",
+					"currency": "NPR"
+				},
+				"skills": "C#, .NET Core, ASP.NET Core, Angular, TypeScript, SQL Server, Microservices"
+			}
+		],
+		"award": [
+			"15+ Enterprise Projects Successfully Delivered",
+			"Team Leadership in Core Banking System Development",
+			"Healthcare HIPAA Compliance Implementation"
+		],
+		"contactPoint": {
+			"@type": "ContactPoint",
+			"telephone": "+977-9843573229",
+			"contactType": "Professional",
+			"email": "aayambishow007@gmail.com",
+			"availableLanguage": ["English", "Nepali"]
+		},
+		"sameAs": [
+			"https://bishowshrestha.com.np/",
+			"https://github.com/bishowshrestha",
+			"https://linkedin.com/in/bishowshrestha",
+			"https://twitter.com/bishowshrestha"
+		]
+	}
+	</script>
+
+	<!-- Structured Data - Website Schema -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "WebSite",
+		"name": "Bishow Shrestha Portfolio",
+		"alternateName": "Bishow Shrestha - Senior Software Engineer",
+		"url": "https://bishowshrestha.com.np/",
+		"description": "Professional portfolio showcasing software development projects, skills, and experience of Bishow Shrestha - Senior Software Engineer specializing in .NET Core, Angular, and enterprise applications.",
+		"inLanguage": "en-US",
+		"author": {
+			"@type": "Person",
+			"name": "Bishow Kaji Shrestha",
+			"url": "https://bishowshrestha.com.np/"
+		},
+		"creator": {
+			"@type": "Person",
+			"name": "Bishow Kaji Shrestha"
+		},
+		"publisher": {
+			"@type": "Person",
+			"name": "Bishow Kaji Shrestha"
+		}
+	}
+	</script>
+
+	<!-- Structured Data - Professional Service Schema -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "ProfessionalService",
+		"name": "Bishow Shrestha - Software Development Services",
+		"description": "Professional software development services specializing in .NET Core, Angular, microservices architecture, and enterprise application development.",
+		"url": "https://bishowshrestha.com.np/",
+		"areaServed": {
+			"@type": "Country",
+			"name": "Nepal"
+		},
+		"provider": {
+			"@type": "Person",
+			"name": "Bishow Kaji Shrestha",
+			"jobTitle": "Senior Software Engineer"
+		},
+		"serviceType": [
+			"Full Stack Web Development",
+			"Frontend Development with Angular",
+			"Backend Development with .NET Core",
+			"Database Design and Optimization",
+			"Microservices Architecture",
+			"Mobile App Development",
+			"Agile Project Management",
+			"Technical Consulting"
+		],
+		"priceRange": "$$"
+	}
+	</script>
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300" itemscope
 	itemtype="https://schema.org/WebPage">
 	<!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-53587PK" height="0" width="0"
-			class="gtm-noscript" title="Google Tag Manager"></iframe></noscript>
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-53587PK" class="gtm-noscript"
+			title="Google Tag Manager"></iframe></noscript>
 	<!-- End Google Tag Manager (noscript) -->
 
 	<header>
@@ -231,6 +551,12 @@
 								<span class="txt-rotate" data-period="2000"
 									data-rotate='[ "DotNet Developer", "Full Stack Developer", "Software Engineer"]'></span>
 							</h2>
+							<p class="mt-4 hero-tagline">
+								Senior Software Engineer specializing in .NET Core, ASP.NET Core, Angular, and
+								enterprise application development.
+								Certified SAFe Practitioner with 6+ years of experience building scalable solutions for
+								healthcare, banking, and e-commerce industries.
+							</p>
 						</div>
 					</div>
 				</div>
@@ -343,7 +669,9 @@
 				<div class="row justify-content-center mb-5 pb-5">
 					<div class="col-md-7 heading-section text-center ftco-animate">
 						<div class="big big-2" aria-hidden="true">Tools</div>
-						<h2 class="mb-4"></h2>
+						<h2 class="mb-4">Developer Tools & Utilities</h2>
+						<p>Useful web development tools built by Bishow Shrestha for developers. Free online utilities
+							for JSON formatting, Base64 encoding, text manipulation, and more.</p>
 					</div>
 				</div>
 				<div class="row">
@@ -796,8 +1124,10 @@
 				<div class="row justify-content-center py-5 mt-5">
 					<div class="col-md-12 heading-section text-center ftco-animate">
 						<div class="big big-2" aria-hidden="true">Services</div>
-						<h2 class="mb-4">Services</h2>
-						<p>HERE ARE SOME OF MY EXPERTISE</p>
+						<h2 class="mb-4">Professional Software Development Services</h2>
+						<p>Bishow Shrestha offers comprehensive software development services with expertise in .NET
+							Core, Angular, and full-stack web development. With over 6 years of experience delivering
+							enterprise solutions across healthcare, banking, and e-commerce domains.</p>
 					</div>
 				</div>
 				<div class="row">
@@ -807,8 +1137,10 @@
 								<i class="flaticon-analysis"></i>
 							</span>
 							<div class="desc">
-								<h3 class="mb-5">Web Design</h3>
-
+								<h3 class="mb-3">Web Design & UI/UX</h3>
+								<p>Modern, responsive web design using HTML5, CSS3, and Bootstrap. Creating
+									user-friendly interfaces with focus on accessibility and performance optimization.
+								</p>
 							</div>
 						</a>
 					</div>
@@ -819,8 +1151,10 @@
 								<i class="flaticon-ideas"></i>
 							</span>
 							<div class="desc">
-								<h3 class="mb-5">Web Developer</h3>
-
+								<h3 class="mb-3">Full Stack Web Development</h3>
+								<p>Enterprise web application development using .NET Core, ASP.NET Core, and Angular.
+									Specializing in microservices architecture, RESTful APIs, and scalable backend
+									solutions.</p>
 							</div>
 						</a>
 					</div>
@@ -831,8 +1165,9 @@
 								<i class="flaticon-innovation"></i>
 							</span>
 							<div class="desc">
-								<h3 class="mb-5">App Developing</h3>
-
+								<h3 class="mb-3">Mobile App Development</h3>
+								<p>Cross-platform mobile application development with native performance. Experience in
+									building Android apps for agriculture, e-commerce, and financial sectors.</p>
 							</div>
 						</a>
 					</div>
@@ -842,8 +1177,9 @@
 								<i class="flaticon-ux-design"></i>
 							</span>
 							<div class="desc">
-								<h3 class="mb-5">Branding</h3>
-
+								<h3 class="mb-3">Database Design & Optimization</h3>
+								<p>Database architecture and performance tuning for SQL Server, Oracle, and PostgreSQL.
+									Expertise in complex queries, stored procedures, and data migration strategies.</p>
 							</div>
 						</a>
 					</div>
@@ -853,7 +1189,10 @@
 								<i class="flaticon-idea"></i>
 							</span>
 							<div class="desc">
-								<h3 class="mb-5">Product Strategy</h3>
+								<h3 class="mb-3">Agile Project Management</h3>
+								<p>Certified Scrum Master and SAFe Practitioner offering agile project management, team
+									leadership, and sprint planning. Experience managing distributed teams and
+									delivering complex enterprise projects.</p>
 
 							</div>
 						</a>
@@ -868,7 +1207,10 @@
 				<div class="row no-gutters justify-content-center pb-5">
 					<div class="col-md-12 heading-section text-center ftco-animate">
 						<div class="big big-2" aria-hidden="true">Projects</div>
-						<h2 class="mb-4">Involved Projects</h2>
+						<h2 class="mb-4">Portfolio of Successfully Delivered Projects</h2>
+						<p>Bishow Shrestha has delivered 15+ enterprise projects across healthcare, banking, e-commerce,
+							and agriculture domains. Experience in building scalable .NET Core applications, Angular
+							SPAs, and mobile solutions serving thousands of users.</p>
 					</div>
 				</div>
 				<div class="row no-gutters">
@@ -1248,26 +1590,25 @@
 
 
 	<!-- loader -->
-	<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
-			<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
-			<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
-				stroke="#F96D00" />
+	<div id="ftco-loader" class="show fullscreen"><svg class="circular">
+			<circle class="path-bg" cx="24" cy="24" r="22" />
+			<circle class="path" cx="24" cy="24" r="22" />
 		</svg></div>
 
-	<!-- Core JavaScript files - optimized loading order -->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/jquery-migrate-3.0.1.min.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.easing.1.3.js"></script>
-	<script src="js/jquery.waypoints.min.js"></script>
-	<script src="js/jquery.stellar.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/aos.js"></script>
-	<script src="js/jquery.animateNumber.min.js"></script>
-	<script src="js/scrollax.min.js"></script>
-	<script src="js/main.js"></script>
+	<!-- Core JavaScript files - deferred for better performance -->
+	<script src="js/jquery.min.js" defer></script>
+	<script src="js/jquery-migrate-3.0.1.min.js" defer></script>
+	<script src="js/popper.min.js" defer></script>
+	<script src="js/bootstrap.min.js" defer></script>
+	<script src="js/jquery.easing.1.3.js" defer></script>
+	<script src="js/jquery.waypoints.min.js" defer></script>
+	<script src="js/jquery.stellar.min.js" defer></script>
+	<script src="js/owl.carousel.min.js" defer></script>
+	<script src="js/jquery.magnific-popup.min.js" defer></script>
+	<script src="js/aos.js" defer></script>
+	<script src="js/jquery.animateNumber.min.js" defer></script>
+	<script src="js/scrollax.min.js" defer></script>
+	<script src="js/main.js" defer></script>
 
 	<!-- External scripts - deferred loading -->
 	<script src="https://code.iconify.design/1/1.0.7/iconify.min.js" defer></script>
