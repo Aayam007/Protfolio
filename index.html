@@ -24,6 +24,52 @@
 	<!-- Canonical URL -->
 	<link rel="canonical" href="https://bishowshrestha.com.np/" />
 
+	<!-- Favicon -->
+	<link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+	<link rel="icon" type="image/png" sizes="32x32" href="images/favicon.svg" />
+	<link rel="icon" type="image/png" sizes="16x16" href="images/favicon.svg" />
+	<link rel="apple-touch-icon" sizes="180x180" href="images/favicon.svg" />
+
+	<!-- Schema.org Structured Data -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "Person",
+		"name": "Bishow Kaji Shrestha",
+		"alternateName": "Bishow Shrestha",
+		"url": "https://bishowshrestha.com.np/",
+		"image": "https://bishowshrestha.com.np/images/about.jpg",
+		"jobTitle": "Senior Software Engineer",
+		"description": "Senior Software Engineer with 6+ years in .NET Core, Angular & SQL Server. SAFe certified, specializing in microservices & healthcare systems.",
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Kathmandu",
+			"addressCountry": "Nepal"
+		},
+		"alumniOf": {
+			"@type": "Organization",
+			"name": "Tribhuvan University"
+		},
+		"knowsAbout": [
+			".NET Core",
+			"ASP.NET Core",
+			"Angular",
+			"TypeScript",
+			"C#",
+			"SQL Server",
+			"Microservices Architecture",
+			"Healthcare HIPAA",
+			"Core Banking Systems",
+			"Agile Scrum",
+			"SAFe Practitioner"
+		],
+		"sameAs": [
+			"https://github.com/Aayam007",
+			"https://www.linkedin.com/in/bishow-shrestha/"
+		]
+	}
+	</script>
+
 	<!-- DNS prefetch and preconnect for third-party resources -->
 	<!-- Note: Cache TTLs are controlled by third-party services (5m-7d) and cannot be modified from client-side -->
 	<link rel="dns-prefetch" href="https://raw.githubusercontent.com">
@@ -247,7 +293,30 @@
 
 <body>
 	<main class="page">
-		<article id="content" class="markdown-body"></article>
+		<article id="content" class="markdown-body">
+			<!-- Fallback content for LLMs and non-JS users -->
+			<noscript>
+				<h1>Bishow Kaji Shrestha - Senior Software Engineer</h1>
+				<p>Senior Software Engineer with 6+ years of experience in .NET Core, ASP.NET Core, Angular, and SQL
+					Server. Certified SAFe Practitioner and Scrum Master specializing in healthcare HIPAA compliance,
+					Core Banking Systems, and microservices architecture.</p>
+				<h2>Skills & Expertise</h2>
+				<ul>
+					<li>.NET Core / ASP.NET Core</li>
+					<li>Angular (TypeScript)</li>
+					<li>SQL Server / Oracle / PostgreSQL</li>
+					<li>Microservices Architecture</li>
+					<li>Healthcare HIPAA Compliance</li>
+					<li>Core Banking Systems</li>
+					<li>Agile Scrum / SAFe Practitioner</li>
+				</ul>
+				<h2>Professional Summary</h2>
+				<p>Experienced software engineer specializing in full-stack development with .NET Core, ASP.NET Core,
+					and Angular. Expertise in building scalable microservices architectures, healthcare systems with
+					HIPAA compliance, and core banking solutions. Strong background in SQL Server database design and
+					optimization. Certified SAFe Practitioner with proven leadership in Agile Scrum methodologies.</p>
+			</noscript>
+		</article>
 	</main>
 
 	<!-- Prefer loading the .md dynamically (works when served via Live Server / GitHub Pages).
